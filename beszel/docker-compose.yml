@@ -1,0 +1,15 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8090
+  app:
+    image: ghcr.io/henrygd/beszel/beszel:0.18.7@sha256:5b583633750cae65a9c1ab399c4c0eed229666ad74e103801724e3bc465338b8
+    user: "1000:1000"
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33031:8090
+    volumes:
+      - ${APP_DATA_DIR}/data:/beszel_data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
