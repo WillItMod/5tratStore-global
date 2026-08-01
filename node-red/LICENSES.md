@@ -12,13 +12,13 @@
 - Initialisation helper: Alpine Linux `alpine:3.22.1`
   - Multi-architecture index digest: `sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1`
   - Licence information: https://www.alpinelinux.org/about/
-- `icon.png` is original 5tratStore catalogue artwork covered by this
-  repository's MIT licence. It is not the upstream project's logo.
+- The icon is loaded directly from the official Node-RED project asset:
+  https://raw.githubusercontent.com/node-red/node-red/5.0.4/packages/node_modules/@node-red/editor-client/src/images/node-red-icon.svg
 
-Node-RED is a trademark of the OpenJS Foundation. The mark is used only to
-identify the unmodified upstream software. This independent 5tratStore recipe
-is not affiliated with or endorsed by the OpenJS Foundation or the Node-RED
-project. The catalogue icon is original artwork and does not use their logo.
+Node-RED is a trademark of the OpenJS Foundation. The mark and official icon
+are used only to identify the unmodified upstream software. This independent
+5tratStore recipe is not affiliated with or endorsed by the OpenJS Foundation
+or the Node-RED project.
 
 Trademark policy reviewed:
 https://images.prismic.io/openjsf/69641abf-ac84-44a2-b719-ee4498d07b06_OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf

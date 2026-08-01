@@ -17,9 +17,12 @@ An app is eligible only when all of the following are true:
    endpoint when the user chooses Install.
 4. Container images are pinned by version and digest. The review records the
    direct-upstream delivery model and the upstream source and licence evidence.
-5. Listing text and screenshots are original or supplied with explicit reuse
-   permission.
-6. Icon and other artwork rights are documented.
+5. Listing text accurately identifies the upstream product and does not imply
+   that 5tratumOS created, owns, or endorses it. Screenshots are either direct
+   upstream media or captured during compatibility testing.
+6. Icons use an upstream project's official public asset directly where one is
+   available. The exact source URL and any applicable brand notice are recorded
+   without copying a separate app store's media catalogue.
 7. The listing includes the upstream licence, version, source and attribution
    information needed to identify what the user elects to install. 5tratStore
    does not claim upstream work as its own or create a substitute source offer

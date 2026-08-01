@@ -1,0 +1,48 @@
+schemaVersion: 1
+status: approved
+appId: alertmanager
+appVersion: 0.33.1
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/prometheus/alertmanager
+  license: Apache-2.0
+  licenseEvidence: https://github.com/prometheus/alertmanager/blob/v0.33.1/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - v0.7.4-test-hashwatcher
+  architectures:
+    - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: >-
+  The original Prometheus image is pulled directly by the user's node. The
+  recipe contains only original 5tratStore configuration and an isolated test
+  capture of the unmodified upstream UI.
+  The safe default config has a local discard receiver, so it sends no alert or
+  credentials to an external service. The app runs as the image's nobody user,
+  has all Linux capabilities dropped, has no host mounts, devices, privileged
+  mode, host networking or Docker socket, and its UI binds to host loopback.
+  Clean install, start, readiness access, pinned update, data-preserving
+  uninstall/reinstall and disable are verified on the amd64 Proxmox 5tratumOS
+  v0.7.4 release candidate. The test app was disabled after verification.

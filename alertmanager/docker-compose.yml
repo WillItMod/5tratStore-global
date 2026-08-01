@@ -1,0 +1,38 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 9093
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - install -d -o 65534 -g 65534 /alertmanager && chown -R 65534:65534 /alertmanager /data
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/data/storage:/alertmanager
+    security_opt:
+      - no-new-privileges:true
+  app:
+    image: quay.io/prometheus/alertmanager:v0.33.1@sha256:9e082985f56f4c8c9f724e18f2288c6708f472e56a5286b8863d080434ea065d
+    restart: unless-stopped
+    user: "65534:65534"
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/alertmanager
+      - --cluster.listen-address=
+    ports:
+      - 127.0.0.1:33018:9093
+    volumes:
+      - ${APP_DATA_DIR}/data/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - ${APP_DATA_DIR}/data/storage:/alertmanager
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully

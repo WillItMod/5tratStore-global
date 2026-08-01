@@ -11,9 +11,9 @@
     `sha256:13af6f24a4e73b84ed173df90fd1489257316fbc433381f69dd9ed262645c9ef`
   - Publisher: https://hub.docker.com/r/hashwatcher/hashwatcher-gateway
   - Verified platforms: `linux/amd64` and `linux/arm64`.
-- `icon.png` is original 5tratStore catalogue artwork covered by this
-  repository's MIT licence. It does not use HashWatcher or Engineered
-  Essentials artwork.
+- The icon is loaded directly from the project repository, with the same
+  project-developer permission recorded for this integration:
+  https://raw.githubusercontent.com/gpena208777/hashwatcherhub/main/hashwatcher-gateway/icon.png
 
 The listing text and recipe are original. The recipe pulls and runs the exact,
 unmodified upstream image directly on the user's node. 5tratStore does not

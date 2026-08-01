@@ -10,8 +10,8 @@
 - Initialisation helper: Alpine Linux `alpine:3.22.1`
   - Multi-architecture index digest: `sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1`
   - Licence information: https://www.alpinelinux.org/about/
-- `icon.png` is original 5tratStore catalogue artwork covered by this
-  repository's MIT licence. It is not the upstream project's logo.
+- The icon is loaded directly from the official Grafana project asset:
+  https://raw.githubusercontent.com/grafana/grafana/v13.1.0/public/img/grafana_icon.svg
 
 The recipe runs an unmodified official upstream image. Corresponding source is
 available from the exact tagged source link above.

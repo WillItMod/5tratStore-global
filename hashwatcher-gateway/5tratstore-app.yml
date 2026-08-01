@@ -13,6 +13,7 @@ developer: Engineered Essentials
 website: https://hashwatcher.app/
 repo: https://github.com/gpena208777/hashwatcherhub
 support: https://hashwatcher.app/support
+icon: https://raw.githubusercontent.com/gpena208777/hashwatcherhub/main/hashwatcher-gateway/icon.png
 port: 33014
 path: /
 uiMode: proxy

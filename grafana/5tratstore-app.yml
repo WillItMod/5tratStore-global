@@ -1,17 +1,17 @@
 id: grafana
 name: Grafana
-tagline: Build dashboards for miners, nodes, pools, and hosts
+tagline: Open and composable observability and data visualisation
 description: >-
-  Grafana is an open-source visualisation platform for operational metrics.
-  Connect it to Prometheus or another supported data source to build dashboards
-  for mining infrastructure. This is an independent 5tratStore recipe using the
-  official upstream container; no affiliation or endorsement is implied.
+  Grafana is an open and composable observability and data visualisation
+  platform. Connect it to Prometheus or another supported data source to build
+  dashboards, explore metrics, logs and traces, and configure alerts.
 version: 13.1.0
 category: Monitoring
 developer: Grafana Labs and contributors
 website: https://grafana.com/oss/grafana/
 repo: https://github.com/grafana/grafana
 support: https://github.com/grafana/grafana/issues
+icon: https://raw.githubusercontent.com/grafana/grafana/v13.1.0/public/img/grafana_icon.svg
 port: 33012
 path: /
 services:

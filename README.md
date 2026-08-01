@@ -11,7 +11,7 @@ from its original upstream project and must pass the review gate in
 ## Delivery model
 
 GLOBAL stores recipes only: original listing metadata, small configuration and
-initialisation files, notices, review evidence, and neutral catalogue artwork.
+initialisation files, notices, review evidence, and store-owned test captures.
 It does **not** contain or serve third-party application source, container
 images, executables, archives, or build outputs. When a user presses Install,
 their own node pulls the pinned artifact directly from the original upstream
@@ -45,10 +45,16 @@ Each app lives in a top-level directory and must include:
 - `docker-compose.yml` — pinned runtime definition; floating `latest` tags are rejected.
 - `5tratstore-review.yml` — signed-off legal and compatibility evidence.
 - `LICENSES.md` — applicable licences, notices, and artifact provenance.
-- `icon.png` — artwork whose reuse rights are documented in the review record.
+- `icon` — an original local icon or a direct HTTPS link to the upstream
+  project's official icon; its provenance is documented in the review record.
 
 Every approved review declares `delivery.mode: direct-upstream-artifact`,
 `storePayload: recipe-only`, and `mirrorsThirdPartyPayload: false`.
+
+Listing copy identifies the upstream product faithfully. Where available,
+logos are loaded directly from the upstream project's official public assets;
+the store does not substitute 5tratumOS artwork. Gallery images are either
+direct upstream media or screenshots captured during compatibility testing.
 
 Run `python3 scripts/validate_store.py` before proposing an app.
 
