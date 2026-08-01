@@ -18,12 +18,13 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Tailscale | Private encrypted networking between the user's devices | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | **Approved:** 1.98.10 userspace recipe lifecycle-tested on amd64; user account, arm64 and Sol/high follow-up tracked |
 | Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
 | Netdata | Host and container monitoring | 79,968 | GPL-3.0 | Research; resource/security review needed |
-| Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | Research; pair with data source |
+| Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | **Approved:** direct upstream recipe lifecycle-tested on amd64 |
 | Prometheus | Metrics collection | 65,402 | Apache-2.0 | **Approved:** 3.13.2 recipe tested on amd64 |
 | Alertmanager | Alert grouping, routing, silencing and inhibition | Prometheus project | Apache-2.0 | **Approved:** 0.33.1 safe-default recipe tested on amd64 |
 | ntfy | Private infrastructure notifications | 26,000+ | Apache-2.0 | **Approved:** 2.26.3 private-by-default recipe tested on amd64 |
 | Node-RED | Miner telemetry and control automation | 23,476 | Apache-2.0 | **Approved:** 5.0.4 loopback-only recipe tested on amd64 |
 | Eclipse Mosquitto™ | MQTT for miner telemetry | 11,086 | EPL-2.0 OR BSD-3-Clause | **Approved:** 2.1.2 loopback-only recipe tested on amd64 |
+| InfluxDB | Time-series metrics and events | Current 2.7.12 release | Apache-2.0 | **Approved:** 2.7.12 unmodified upstream recipe lifecycle-tested on amd64; first-run setup is administrator-led |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

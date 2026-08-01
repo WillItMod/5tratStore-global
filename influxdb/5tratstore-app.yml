@@ -1,0 +1,19 @@
+id: influxdb
+name: InfluxDB
+tagline: Time series platform for metrics and events
+description: >-
+  InfluxDB is an open-source time series platform for collecting, storing and
+  querying metrics and events. The first-run setup is completed by the local
+  administrator through the authenticated 5tratumOS proxy.
+version: 2.7.12
+category: Monitoring
+developer: InfluxData and contributors
+website: https://www.influxdata.com/
+repo: https://github.com/influxdata/influxdb
+support: https://github.com/influxdata/influxdb/issues
+icon: https://raw.githubusercontent.com/influxdata/influxdb/v2.7.12/assets/influxdb-logo.png
+gallery:
+  - https://images.ctfassets.net/o7xu9whrs0u9/fn7Q8NJ8ctkA2FOf8DPjW/e565b64e317d8a344c74faba3801330f/OG_It_s_About_Time.png
+port: 33020
+path: /
+uiMode: proxy

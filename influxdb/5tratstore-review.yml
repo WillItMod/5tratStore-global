@@ -1,0 +1,15 @@
+schemaVersion: 1
+status: approved
+appId: influxdb
+appVersion: 2.7.12
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/influxdata/influxdb
+  license: Apache-2.0
+  licenseEvidence: https://github.com/influxdata/influxdb/blob/v2.7.12/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: Original upstream image, direct user-node pull, loopback UI; CT lifecycle-tested and disabled after verification.
