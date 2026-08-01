@@ -1,0 +1,16 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8086
+  app:
+    image: influxdb:2.7.12@sha256:b8d940ca9376f85118260f5b6bd236b8a00b1749c3350c5578d4cde8e27f31f2
+    user: "1000:1000"
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33020:8086
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/influxdb2
+      - ${APP_DATA_DIR}/data/config:/etc/influxdb2
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
