@@ -1,0 +1,18 @@
+id: beszel
+name: Beszel Hub
+tagline: Lightweight monitoring for systems you enrol
+description: >-
+  Beszel is a lightweight monitoring hub with historical data and alerts. This
+  recipe installs only the original Hub interface. It has no access to the
+  5tratumOS host or Docker daemon; add monitoring agents or remote systems
+  yourself after creating the administrator account.
+version: 0.18.7
+category: Monitoring
+developer: Henry Gardner and contributors
+website: https://beszel.dev/
+repo: https://github.com/henrygd/beszel
+support: https://github.com/henrygd/beszel/discussions
+icon: https://raw.githubusercontent.com/henrygd/beszel/v0.18.7/internal/site/public/static/icon.svg
+port: 33031
+path: /
+uiMode: proxy
