@@ -61,11 +61,21 @@ def grafana() -> Image.Image:
     return image
 
 
+def ntfy() -> Image.Image:
+    image, draw = base((57, 255, 159))
+    draw.rounded_rectangle((148, 178, 364, 348), radius=38, outline=(225, 255, 241), width=18)
+    draw.polygon(((176, 348), (176, 404), (236, 348)), fill=(225, 255, 241))
+    for x in (202, 256, 310):
+        draw.ellipse((x - 12, 250 - 12, x + 12, 250 + 12), fill=(57, 255, 159))
+    return image
+
+
 def main() -> None:
     outputs = {
         ROOT / "uptime-kuma" / "icon.png": uptime(),
         ROOT / "prometheus" / "icon.png": prometheus(),
         ROOT / "grafana" / "icon.png": grafana(),
+        ROOT / "ntfy" / "icon.png": ntfy(),
     }
     for path, image in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)

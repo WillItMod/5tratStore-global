@@ -13,9 +13,10 @@ from its original upstream project and must pass the review gate in
 - Uptime Kuma 2.4.0 — availability monitoring for pools, nodes, miners, and services.
 - Prometheus 3.13.2 — metrics collection for mining infrastructure.
 - Grafana 13.1.0 — dashboards for miner, node, pool, and host metrics.
+- ntfy 2.26.3 — private-by-default notifications for miner, node, pool, and system alerts.
 
 Each recipe passed install, start, update, and uninstall testing on a
-`v0.7.3-test-5tratstore` amd64 candidate. Approval evidence lives beside
+5tratumOS `v0.7.3` amd64 build or its exact release candidate. Approval evidence lives beside
 each recipe and the validator rejects any unapproved directory.
 
 ## Catalogue contract

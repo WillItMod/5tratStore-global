@@ -1,0 +1,34 @@
+schemaVersion: 1
+status: approved
+appId: ntfy
+appVersion: 2.26.3
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/binwiederhier/ntfy
+  license: Apache-2.0
+  licenseEvidence: https://github.com/binwiederhier/ntfy/blob/v2.26.3/LICENSE
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - v0.7.3
+  architectures:
+    - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: Private-by-default recipe; login required, anonymous access denied, no public push relay configured.

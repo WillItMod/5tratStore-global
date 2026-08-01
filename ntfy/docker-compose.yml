@@ -1,0 +1,42 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 80
+  init:
+    image: binwiederhier/ntfy:v2.26.3@sha256:081b53dbb20674fcfe05fdb4eb8af9036a2645ef979543d16f7f80803af467b1
+    restart: "no"
+    user: "1000:1000"
+    entrypoint:
+      - /bin/sh
+    command:
+      - /var/lib/ntfy/init.sh
+    environment:
+      NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
+      NTFY_PASSWORD: ${APP_PASSWORD}
+      NTFY_LISTEN_HTTP: 127.0.0.1:8080
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/ntfy
+    security_opt:
+      - no-new-privileges:true
+  app:
+    image: binwiederhier/ntfy:v2.26.3@sha256:081b53dbb20674fcfe05fdb4eb8af9036a2645ef979543d16f7f80803af467b1
+    restart: unless-stopped
+    user: "1000:1000"
+    command:
+      - serve
+    environment:
+      NTFY_LISTEN_HTTP: :80
+      NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
+      NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
+      NTFY_AUTH_DEFAULT_ACCESS: deny-all
+      NTFY_ENABLE_LOGIN: "true"
+      NTFY_REQUIRE_LOGIN: "true"
+      NTFY_BEHIND_PROXY: "true"
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/ntfy
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
