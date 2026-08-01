@@ -1,0 +1,41 @@
+id: mosquitto
+name: Eclipse Mosquitto™
+tagline: Local MQTT broker for mining and system telemetry
+description: >-
+  Eclipse Mosquitto™ is a lightweight MQTT broker used by the 5tratumOS event
+  and telemetry integration. This independent recipe binds MQTT to the node's
+  loopback interface only, so it is not exposed to the LAN or internet by
+  default. No affiliation or endorsement is implied.
+version: 2.1.2
+category: Mining infrastructure
+developer: Eclipse Mosquitto contributors
+website: https://mosquitto.org/
+repo: https://github.com/eclipse-mosquitto/mosquitto
+support: https://github.com/eclipse-mosquitto/mosquitto/issues
+port: 0
+services:
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - install -d -o 1883 -g 1883 /mosquitto/data && chown -R 1883:1883 /mosquitto/data
+    volumes:
+      - ${APP_DATA_DIR}/data/storage:/mosquitto/data
+    security_opt:
+      - no-new-privileges:true
+  app:
+    image: eclipse-mosquitto:2.1.2-alpine@sha256:6f8d8a947c506f8a2290ec65cd4bd2bc7cb4d43fb5f6271f861cb013e2ef9797
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:1883:1883
+    volumes:
+      - ${APP_DATA_DIR}/data/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ${APP_DATA_DIR}/data/storage:/mosquitto/data
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
