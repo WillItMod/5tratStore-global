@@ -1,0 +1,17 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 3100
+  app:
+    image: grafana/loki:3.7.4@sha256:87f0a067673756a3cede1bcbf0c74875f7df9b09fddb53e399d0c576f756cfcc
+    user: "1000:1000"
+    command: -config.file=/etc/loki/config.yml
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33022:3100
+    volumes:
+      - ${APP_DATA_DIR}/data:/loki
+      - ${APP_DATA_DIR}/data/config.yml:/etc/loki/config.yml:ro
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

@@ -1,0 +1,15 @@
+schemaVersion: 1
+status: approved
+appId: loki
+appVersion: 3.7.4
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/grafana/loki
+  license: AGPL-3.0
+  licenseEvidence: https://github.com/grafana/loki/blob/v3.7.4/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: Original upstream image, direct user-node pull and recipe-owned local configuration; AGPL-3.0 is compatible with this recipe-only listing. CT lifecycle-tested and disabled after verification.
