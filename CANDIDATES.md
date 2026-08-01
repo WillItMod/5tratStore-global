@@ -25,6 +25,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Node-RED | Miner telemetry and control automation | 23,476 | Apache-2.0 | **Approved:** 5.0.4 loopback-only recipe tested on amd64 |
 | Eclipse Mosquitto™ | MQTT for miner telemetry | 11,086 | EPL-2.0 OR BSD-3-Clause | **Approved:** 2.1.2 loopback-only recipe tested on amd64 |
 | InfluxDB | Time-series metrics and events | Current 2.7.12 release | Apache-2.0 | **Approved:** 2.7.12 unmodified upstream recipe lifecycle-tested on amd64; first-run setup is administrator-led |
+| Telegraf | Local metrics collection agent | Current 1.39.2 release | MIT | **Approved:** 1.39.2 safe starter recipe lifecycle-tested on amd64; user configures any extra inputs/outputs |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

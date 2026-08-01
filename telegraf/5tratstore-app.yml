@@ -1,0 +1,18 @@
+id: telegraf
+name: Telegraf
+tagline: Plugin-driven metrics collection agent
+description: >-
+  Telegraf is a plugin-driven server agent for collecting and reporting metrics.
+  This safe starter recipe collects local CPU, memory and system metrics and
+  exposes them on a local Prometheus-compatible endpoint. Configure additional
+  inputs and outputs in the app data directory after installation.
+version: 1.39.2
+category: Monitoring
+developer: InfluxData and contributors
+website: https://www.influxdata.com/time-series-platform/telegraf/
+repo: https://github.com/influxdata/telegraf
+support: https://github.com/influxdata/telegraf/issues
+icon: https://raw.githubusercontent.com/influxdata/telegraf/v1.39.2/assets/TelegrafTigerSmall.png
+port: 33021
+path: /
+uiMode: proxy
