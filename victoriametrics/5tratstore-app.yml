@@ -1,0 +1,18 @@
+id: victoriametrics
+name: VictoriaMetrics
+tagline: Fast, scalable time-series database and monitoring solution
+description: >-
+  VictoriaMetrics is an open-source time-series database and monitoring
+  solution. This recipe runs the original single-node service with its own
+  self-scrape enabled, so the upstream VMUI is ready to explore after startup.
+  Add only scrape targets and metric writers you control.
+version: 1.148.0
+category: Monitoring
+developer: VictoriaMetrics contributors
+website: https://victoriametrics.com/
+repo: https://github.com/VictoriaMetrics/VictoriaMetrics
+support: https://github.com/VictoriaMetrics/VictoriaMetrics/discussions
+icon: https://raw.githubusercontent.com/VictoriaMetrics/VictoriaMetrics/v1.148.0/app/vmselect/vmui/favicon.svg
+port: 33026
+path: /vmui/
+uiMode: proxy

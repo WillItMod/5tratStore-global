@@ -1,0 +1,18 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8428
+  app:
+    image: victoriametrics/victoria-metrics:v1.148.0@sha256:407013e902f9a0ba1d4b2d4c077c47bbaf917c893c52ff39b19efe83a654afda
+    user: "1000:1000"
+    command:
+      - -storageDataPath=/victoria-metrics-data
+      - -selfScrapeInterval=5s
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33026:8428
+    volumes:
+      - ${APP_DATA_DIR}/data:/victoria-metrics-data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
