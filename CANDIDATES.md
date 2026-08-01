@@ -51,7 +51,7 @@ should be prioritised even though their public adoption signals are smaller.
 | Stratum V2 SRI | Stratum V2 protocol and mining infrastructure | 350 | Dual MIT/Apache-2.0 licence files present | Priority research; package only stable upstream components |
 | ckpool | Bitcoin mining pool server | 24 | GPL-3.0 | Priority research; source-offer and recipe obligations required |
 | Public Pool | Solo mining pool UI/service | 17 | No repository licence found | Hold: obtain explicit upstream permission or a licence grant |
-| HashWatcher Remote Monitoring Setup | Guided remote miner monitoring setup | Product owner approval reported | Durable public permission record still required | Proxmox lifecycle passed; real tailnet/miner tests and Sol/high review pending |
+| HashWatcher Remote Monitoring Setup | Guided remote miner monitoring setup | Direct project-developer permission recorded 2026-08-01 | Proprietary; permission documented beside recipe | **Approved:** 1.3.0 recipe lifecycle-tested on amd64; real tailnet/miner, arm64 and Sol/high follow-up pending |
 
 Upstream repositories, in the same order:
 
