@@ -1,0 +1,18 @@
+id: pushgateway
+name: Prometheus Pushgateway
+tagline: Push-based metrics gateway for short-lived jobs
+description: >-
+  The Prometheus Pushgateway lets short-lived jobs publish metrics that a
+  Prometheus server can scrape. It is useful for batch mining, maintenance and
+  automation jobs that do not run long enough to be scraped directly. This
+  recipe stores pushed metrics locally and presents the upstream web interface.
+version: 1.11.3
+category: Monitoring
+developer: Prometheus Authors
+website: https://prometheus.io/docs/practices/pushing/
+repo: https://github.com/prometheus/pushgateway
+support: https://github.com/prometheus/pushgateway/issues
+icon: https://raw.githubusercontent.com/prometheus/prometheus/v3.5.0/documentation/images/prometheus-logo.svg
+port: 33023
+path: /
+uiMode: proxy

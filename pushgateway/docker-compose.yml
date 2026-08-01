@@ -1,0 +1,17 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 9091
+  app:
+    image: prom/pushgateway:v1.11.3@sha256:74fa117cef2d7e383112d25139ff1c2d2e309c35389a9e0554a47136a1482e48
+    user: "1000:1000"
+    command:
+      - --persistence.file=/data/metrics
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33023:9091
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
