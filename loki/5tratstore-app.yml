@@ -1,0 +1,20 @@
+id: loki
+name: Grafana Loki
+tagline: Horizontally scalable log aggregation system
+description: >-
+  Grafana Loki is a log aggregation system designed to be queried through
+  Grafana. This starter recipe runs a single local Loki instance with its data
+  stored on the node. Point a compatible log collector at it after installation;
+  use the published readiness endpoint to confirm the service is available.
+version: 3.7.4
+category: Monitoring
+developer: Grafana Labs and contributors
+website: https://grafana.com/oss/loki/
+repo: https://github.com/grafana/loki
+support: https://github.com/grafana/loki/issues
+icon: https://raw.githubusercontent.com/grafana/loki/v3.7.4/docs/sources/logo.png
+gallery:
+  - https://grafana.com/media/oss/Loki-metaimage.png
+port: 33022
+path: /ready
+uiMode: proxy
