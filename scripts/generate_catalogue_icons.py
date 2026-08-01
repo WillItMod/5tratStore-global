@@ -70,12 +70,25 @@ def ntfy() -> Image.Image:
     return image
 
 
+def node_red() -> Image.Image:
+    image, draw = base((214, 67, 82))
+    nodes = ((126, 174, 224, 244), (288, 134, 386, 204), (288, 304, 386, 374))
+    draw.line((224, 209, 258, 209, 258, 169, 288, 169), fill=(232, 240, 250), width=18)
+    draw.line((224, 209, 258, 209, 258, 339, 288, 339), fill=(232, 240, 250), width=18)
+    for box in nodes:
+        draw.rounded_rectangle(box, radius=20, fill=(28, 37, 55), outline=(255, 224, 228), width=10)
+    for x, y in ((224, 209), (288, 169), (288, 339)):
+        draw.ellipse((x - 10, y - 10, x + 10, y + 10), fill=(214, 67, 82))
+    return image
+
+
 def main() -> None:
     outputs = {
         ROOT / "uptime-kuma" / "icon.png": uptime(),
         ROOT / "prometheus" / "icon.png": prometheus(),
         ROOT / "grafana" / "icon.png": grafana(),
         ROOT / "ntfy" / "icon.png": ntfy(),
+        ROOT / "node-red" / "icon.png": node_red(),
     }
     for path, image in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)

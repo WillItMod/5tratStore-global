@@ -19,6 +19,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | Research; pair with data source |
 | Prometheus | Metrics collection | 65,402 | Apache-2.0 | **Approved:** 3.13.2 recipe tested on amd64 |
 | ntfy | Private infrastructure notifications | 26,000+ | Apache-2.0 | **Approved:** 2.26.3 private-by-default recipe tested on amd64 |
+| Node-RED | Miner telemetry and control automation | 23,476 | Apache-2.0 | **Approved:** 5.0.4 loopback-only recipe tested on amd64 |
 | Eclipse Mosquitto™ | MQTT for miner telemetry | 11,086 | EPL-2.0 OR BSD-3-Clause | **Approved:** 2.1.2 loopback-only recipe tested on amd64 |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
@@ -56,6 +57,8 @@ Upstream repositories, in the same order:
 - https://github.com/netdata/netdata
 - https://github.com/grafana/grafana
 - https://github.com/prometheus/prometheus
+- https://github.com/binwiederhier/ntfy
+- https://github.com/node-red/node-red
 - https://github.com/eclipse-mosquitto/mosquitto
 - https://github.com/spesmilo/electrum
 - https://github.com/lightningnetwork/lnd
