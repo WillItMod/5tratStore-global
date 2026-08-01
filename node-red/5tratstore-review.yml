@@ -1,0 +1,40 @@
+schemaVersion: 1
+status: approved
+appId: node-red
+appVersion: 5.0.4
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/node-red/node-red
+  license: Apache-2.0
+  licenseEvidence: https://github.com/node-red/node-red/blob/5.0.4/LICENSE
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - v0.7.4-test-hashwatcher
+  architectures:
+    - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: >-
+  Clean install, live flow deployment, authenticated-proxy access, direct-LAN
+  refusal, stop/start, pinned update, data-preserving uninstall/reinstall and
+  clean test-flow removal passed on the amd64 Proxmox 5tratumOS v0.7.4 release
+  candidate. The editor binds to host loopback only. The runtime is unprivileged,
+  drops all Linux capabilities and has no devices, Docker socket or host mounts
+  beyond its managed data directory. The app was disabled after verification.

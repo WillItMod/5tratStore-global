@@ -15,6 +15,7 @@ from its original upstream project and must pass the review gate in
 - Grafana 13.1.0 — dashboards for miner, node, pool, and host metrics.
 - ntfy 2.26.3 — private-by-default notifications for miner, node, pool, and system alerts.
 - Eclipse Mosquitto™ 2.1.2 — loopback-only MQTT for miner and system telemetry.
+- Node-RED 5.0.4 — authenticated, loopback-only automation for miner telemetry, alerts, and control flows.
 
 Each recipe passed install, start, update, and uninstall testing on a supported
 5tratumOS `v0.7.3` build or `v0.7.4` release candidate on amd64. Approval
