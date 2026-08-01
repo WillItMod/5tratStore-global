@@ -22,6 +22,44 @@ REQUIRED_FILES = {
     "LICENSES.md",
     "icon.png",
 }
+MAX_APP_FILE_BYTES = 2 * 1024 * 1024
+ALLOWED_APP_SUFFIXES = {
+    ".conf",
+    ".ini",
+    ".jpeg",
+    ".jpg",
+    ".js",
+    ".json",
+    ".md",
+    ".png",
+    ".sh",
+    ".svg",
+    ".txt",
+    ".webp",
+    ".yaml",
+    ".yml",
+}
+ALLOWED_APP_BASENAMES = {".gitkeep"}
+FORBIDDEN_PAYLOAD_SUFFIXES = {
+    ".apk",
+    ".bin",
+    ".deb",
+    ".dmg",
+    ".exe",
+    ".gz",
+    ".img",
+    ".ipa",
+    ".iso",
+    ".jar",
+    ".msi",
+    ".ova",
+    ".qcow2",
+    ".tar",
+    ".tgz",
+    ".wasm",
+    ".whl",
+    ".zip",
+}
 RIGHTS = {
     "packageOriginal",
     "softwareDistributionCleared",
@@ -81,6 +119,14 @@ def validate_app(app_dir: Path) -> list[str]:
         if rights.get(field) is not True:
             errors.append(f"{app_dir.name}: rights.{field} must be true")
 
+    delivery = review.get("delivery") if isinstance(review.get("delivery"), dict) else {}
+    if delivery.get("mode") != "direct-upstream-artifact":
+        errors.append(f"{app_dir.name}: delivery.mode must be direct-upstream-artifact")
+    if delivery.get("storePayload") != "recipe-only":
+        errors.append(f"{app_dir.name}: delivery.storePayload must be recipe-only")
+    if delivery.get("mirrorsThirdPartyPayload") is not False:
+        errors.append(f"{app_dir.name}: delivery.mirrorsThirdPartyPayload must be false")
+
     compatibility = review.get("compatibility") if isinstance(review.get("compatibility"), dict) else {}
     if not compatibility.get("osVersions") or not compatibility.get("architectures"):
         errors.append(f"{app_dir.name}: tested OS versions and architectures are required")
@@ -99,7 +145,16 @@ def validate_app(app_dir: Path) -> list[str]:
             errors.append(f"{app_dir.name}: service {service_name} image must use a pinned tag or digest")
 
     for path in app_dir.rglob("*"):
-        if not path.is_file() or path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
+        if not path.is_file():
+            continue
+        suffix = path.suffix.lower()
+        if suffix in FORBIDDEN_PAYLOAD_SUFFIXES:
+            errors.append(f"{app_dir.name}: third-party payload files are not allowed ({path.relative_to(app_dir)})")
+        elif path.name not in ALLOWED_APP_BASENAMES and suffix not in ALLOWED_APP_SUFFIXES:
+            errors.append(f"{app_dir.name}: unsupported recipe file type ({path.relative_to(app_dir)})")
+        if path.stat().st_size > MAX_APP_FILE_BYTES:
+            errors.append(f"{app_dir.name}: recipe file exceeds {MAX_APP_FILE_BYTES} bytes ({path.relative_to(app_dir)})")
+        if suffix in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
             continue
         try:
             text = path.read_text(encoding="utf-8")

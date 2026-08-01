@@ -8,6 +8,10 @@ upstream:
   sourceUrl: https://github.com/eclipse-mosquitto/mosquitto
   license: EPL-2.0 OR BSD-3-Clause
   licenseEvidence: https://github.com/eclipse-mosquitto/mosquitto/blob/v2.1.2/LICENSE.txt
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
 rights:
   packageOriginal: true
   softwareDistributionCleared: true

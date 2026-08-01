@@ -8,6 +8,10 @@ upstream:
   sourceUrl: https://github.com/grafana/grafana
   license: AGPL-3.0-only
   licenseEvidence: https://github.com/grafana/grafana/blob/v13.1.0/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
 rights:
   packageOriginal: true
   softwareDistributionCleared: true
