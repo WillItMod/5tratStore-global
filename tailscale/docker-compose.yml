@@ -1,0 +1,68 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: web
+      APP_PORT: 5252
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - chown -R 0:0 /var/lib/tailscale /var/run/tailscale && rm -f /var/run/tailscale/tailscaled.sock
+    volumes:
+      - ${APP_DATA_DIR}/data/state:/var/lib/tailscale
+      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    security_opt:
+      - no-new-privileges:true
+  daemon:
+    image: tailscale/tailscale:v1.98.10@sha256:cdf5612ded5be1344f1a704b8c5e53496db97376bb533e5e15f141e48bf60cc0
+    restart: unless-stopped
+    environment:
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_SOCKET: /var/run/tailscale/tailscaled.sock
+      TS_USERSPACE: "true"
+      TS_ACCEPT_DNS: "false"
+      TS_HOSTNAME: 5tratumOS
+    volumes:
+      - ${APP_DATA_DIR}/data/state:/var/lib/tailscale
+      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - test
+        - -S
+        - /var/run/tailscale/tailscaled.sock
+      interval: 10s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+  web:
+    image: tailscale/tailscale:v1.98.10@sha256:cdf5612ded5be1344f1a704b8c5e53496db97376bb533e5e15f141e48bf60cc0
+    restart: unless-stopped
+    stop_signal: SIGINT
+    entrypoint:
+      - /usr/local/bin/tailscale
+    command:
+      - --socket=/var/run/tailscale/tailscaled.sock
+      - web
+      - --listen=0.0.0.0:5252
+    ports:
+      - 127.0.0.1:33016:5252
+    volumes:
+      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      daemon:
+        condition: service_healthy

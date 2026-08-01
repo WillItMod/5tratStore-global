@@ -15,7 +15,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
 | Gleec Wallet (Komodo DeFi SDK) | Self-custodial multi-chain wallet and atomic-swap DEX | Current Gleec/Komodo product; release 0.9.5 | GPL-3.0; hosted-service terms separate | **Highest priority, delivery/security hold:** GPL is compatible with a recipe-only listing; require an official direct runtime artifact and HTTPS wallet delivery |
-| Tailscale | Private remote access to miners and node services | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | Proxmox lifecycle passed; real tailnet/arm64 tests and Sol/high review pending |
+| Tailscale | Private encrypted networking between the user's devices | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | **Approved:** 1.98.10 userspace recipe lifecycle-tested on amd64; user account, arm64 and Sol/high follow-up tracked |
 | Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
 | Netdata | Host and container monitoring | 79,968 | GPL-3.0 | Research; resource/security review needed |
 | Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | Research; pair with data source |
