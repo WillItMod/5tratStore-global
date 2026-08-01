@@ -11,7 +11,7 @@ upstream:
   licenseEvidence: https://github.com/Djobleezy/DeepSea-Dashboard/blob/f62c8dd5e3786b6612028689b051b0482d9b5963/LICENSE.md
 delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false, sourceBuild: upstream-dockerfile, reproducibleBuild: false}
 rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
-compatibility: {osVersions: [pending-proxmox-test], architectures: [amd64], installTested: false, startTested: false, updateTested: false, backupTested: false, restoreTested: false, uninstallTested: false}
+compatibility: {osVersions: [proxmox-stratumos-compose-test], architectures: [amd64], installTested: true, startTested: true, updateTested: true, backupTested: true, restoreTested: true, uninstallTested: true}
 security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
 notes: >-
   HOLD pending an upstream reproducible artifact and dependency security fix.
@@ -23,5 +23,8 @@ notes: >-
   The upstream Dockerfile floats base images, package-manager inputs and Python
   minimum-version constraints, so the same commit can build different contents.
   Its reviewed production frontend dependencies also contain React Router open
-  redirect/XSS advisories. Proxmox lifecycle and backup/restore tests remain
-  required after those blockers are resolved.
+  redirect/XSS advisories. Install, rendered UI, restart persistence, source
+  rebuild/update, managed SQLite/config backup and restore, and clean uninstall
+  passed on the amd64 Proxmox StratumOS test guest. The build independently
+  reported six high-severity npm findings, so the successful lifecycle does not
+  resolve the reproducibility or dependency-security blockers.
