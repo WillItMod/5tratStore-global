@@ -1,0 +1,18 @@
+id: victorialogs
+name: VictoriaLogs
+tagline: Fast log database with a query interface
+description: >-
+  VictoriaLogs is an open-source log database. This recipe runs the original
+  single-node service and VMUI with an empty local data store. It does not read
+  host or application logs itself: configure a compatible shipper only for logs
+  you choose to collect.
+version: 1.52.0
+category: Monitoring
+developer: VictoriaMetrics contributors
+website: https://victoriametrics.com/products/victorialogs/
+repo: https://github.com/VictoriaMetrics/VictoriaLogs
+support: https://github.com/VictoriaMetrics/VictoriaLogs/discussions
+icon: https://raw.githubusercontent.com/VictoriaMetrics/VictoriaLogs/v1.52.0/app/vlselect/vmui/favicon.svg
+port: 33032
+path: /select/vmui/
+uiMode: proxy
