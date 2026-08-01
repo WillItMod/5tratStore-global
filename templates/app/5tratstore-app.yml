@@ -1,0 +1,27 @@
+id: replace-me
+name: Replace Me
+tagline: One factual sentence describing the app's purpose
+description: >-
+  Write original text based on the original upstream project's documentation.
+  State important dependencies, limitations, and security-relevant defaults.
+version: 0.0.0
+category: Mining infrastructure
+developer: Original upstream developer
+website: https://example.org/
+repo: https://github.com/original-owner/original-project
+support: https://github.com/original-owner/original-project/issues
+port: 33000
+path: /
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8080
+  app:
+    image: original/image:0.0.0@sha256:replace-me
+    restart: unless-stopped
+    user: "1000:1000"
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
+    security_opt:
+      - no-new-privileges:true

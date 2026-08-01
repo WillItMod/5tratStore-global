@@ -48,3 +48,12 @@ relevance, or compatibility gates.
 
 User-supplied repositories remain separate Custom Stores and are not part of
 5tratStore.
+
+## Contributing apps
+
+App submissions are welcome through pull requests. Start with
+[CONTRIBUTING.md](CONTRIBUTING.md) and copy the files in
+[`templates/app/`](templates/app/). Contributions must be independently created
+from the original upstream project; copied store recipes, metadata, and artwork
+are not accepted. All submissions remain fail-closed until a maintainer records
+legal/provenance clearance and completes 5tratumOS lifecycle testing.
