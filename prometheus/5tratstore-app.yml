@@ -1,0 +1,15 @@
+id: prometheus
+name: Prometheus
+tagline: Collect operational metrics for mining infrastructure
+description: >-
+  A monitoring and time-series system suitable for pool, node, miner, and
+  host metrics. The initial 5tratumOS recipe starts with a safe self-scrape
+  configuration that can be extended with local mining targets.
+version: 3.13.2
+category: Monitoring
+developer: Prometheus Authors
+website: https://prometheus.io/
+repo: https://github.com/prometheus/prometheus
+support: https://github.com/prometheus/prometheus/issues
+port: 33011
+path: /

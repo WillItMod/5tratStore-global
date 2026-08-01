@@ -1,0 +1,15 @@
+id: uptime-kuma
+name: Uptime Kuma
+tagline: Monitor pools, nodes, miners, and local services
+description: >-
+  A self-hosted availability monitor with HTTP, TCP, ping, DNS, Docker,
+  and notification checks. This 5tratumOS recipe keeps its database and
+  configuration in managed app storage and uses the official pinned image.
+version: 2.4.0
+category: Monitoring
+developer: Uptime Kuma contributors
+website: https://uptime.kuma.pet/
+repo: https://github.com/louislam/uptime-kuma
+support: https://github.com/louislam/uptime-kuma/issues
+port: 33010
+path: /
