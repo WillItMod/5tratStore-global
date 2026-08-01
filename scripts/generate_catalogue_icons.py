@@ -43,10 +43,29 @@ def prometheus() -> Image.Image:
     return image
 
 
+def grafana() -> Image.Image:
+    image, draw = base((244, 146, 42))
+    centre = (256, 256)
+    for radius, width in ((118, 22), (74, 18)):
+        draw.arc(
+            (centre[0] - radius, centre[1] - radius, centre[0] + radius, centre[1] + radius),
+            start=205,
+            end=535,
+            fill=(255, 225, 180),
+            width=width,
+        )
+    draw.ellipse((230, 230, 282, 282), fill=(244, 146, 42))
+    for angle_point in ((256, 105), (386, 180), (386, 332), (256, 407), (126, 332), (126, 180)):
+        x, y = angle_point
+        draw.ellipse((x - 13, y - 13, x + 13, y + 13), fill=(255, 244, 225))
+    return image
+
+
 def main() -> None:
     outputs = {
         ROOT / "uptime-kuma" / "icon.png": uptime(),
         ROOT / "prometheus" / "icon.png": prometheus(),
+        ROOT / "grafana" / "icon.png": grafana(),
     }
     for path, image in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)

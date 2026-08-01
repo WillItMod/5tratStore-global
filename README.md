@@ -12,9 +12,10 @@ from its original upstream project and must pass the review gate in
 
 - Uptime Kuma 2.4.0 — availability monitoring for pools, nodes, miners, and services.
 - Prometheus 3.13.2 — metrics collection for mining infrastructure.
+- Grafana 13.1.0 — dashboards for miner, node, pool, and host metrics.
 
-Both recipes passed install, start, update, and uninstall testing on the
-`v0.7.3-test-5tratstore-rc2` amd64 candidate. Approval evidence lives beside
+Each recipe passed install, start, update, and uninstall testing on a
+`v0.7.3-test-5tratstore` amd64 candidate. Approval evidence lives beside
 each recipe and the validator rejects any unapproved directory.
 
 ## Catalogue contract
@@ -33,6 +34,11 @@ Every app is linked to the repository's structured feedback form. Reports are
 user-reviewed and user-submitted; 5tratumOS does not silently upload telemetry
 or logs. Repeated install, runtime, update, or recovery failures can move an app
 back to review or remove it from the catalogue.
+
+The GLOBAL header also links to a structured **Request an app** form. A request
+is prioritised for review after five independent expressions of support. Demand
+sets review priority only; it never bypasses the licence, provenance, security,
+relevance, or compatibility gates.
 
 ## Channels
 

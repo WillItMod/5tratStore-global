@@ -1,0 +1,52 @@
+name: Request an app
+description: Propose an independently sourced app for licence and compatibility review
+title: "[App request] "
+labels:
+  - app-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requests reaching five independent expressions of support are prioritised for review. This is not automatic approval: the upstream licence, container provenance, security profile, relevance, maintenance, and 5tratumOS compatibility must all pass review.
+  - type: input
+    id: app
+    attributes:
+      label: App name
+      placeholder: Project name
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Original upstream project URL
+      description: Link to the project's own source repository, not another app-store listing.
+      placeholder: https://github.com/owner/project
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Upstream licence evidence
+      description: Link to the upstream LICENSE, COPYING, or official licensing page if known.
+      placeholder: https://github.com/owner/project/blob/main/LICENSE
+  - type: textarea
+    id: use
+    attributes:
+      label: Why it belongs in 5tratStore GLOBAL
+      description: Explain the mining, blockchain, node, monitoring, security, or infrastructure use case.
+    validations:
+      required: true
+  - type: textarea
+    id: deployment
+    attributes:
+      label: Deployment information
+      description: Link to official container/build instructions and mention required devices, ports, volumes, credentials, or companion services.
+  - type: checkboxes
+    id: independence
+    attributes:
+      label: Source check
+      options:
+        - label: I linked the original upstream project and did not copy another store's text, artwork, or recipe.
+          required: true
+        - label: I understand requests are reviewed once demand is demonstrated and are not guaranteed acceptance.
+          required: true
