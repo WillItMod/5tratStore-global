@@ -1,0 +1,24 @@
+id: arkade-wallet
+name: Arkade Wallet
+tagline: Self-custodial Bitcoin wallet for the Ark protocol
+description: >-
+  Arkade Wallet is the upstream open-source Bitcoin progressive web app for
+  creating and managing on-chain UTXOs and Ark VTXOs. Wallet keys and recovery
+  material are held in the user's browser, not by 5tratumOS. By default the app
+  connects to Ark Labs' public Arkade services; those operators can observe
+  network requests and their own terms apply. Treat this as custody-sensitive
+  software: use HTTPS, record the recovery material offline, test with a small
+  amount first, and do not assume the node filesystem is a wallet backup.
+version: 2026.08.01-b9edc509
+category: Bitcoin and Lightning
+developer: Ark Labs
+website: https://arkade.money/
+repo: https://github.com/arkade-os/wallet
+support: https://github.com/arkade-os/wallet/issues
+icon: https://raw.githubusercontent.com/arkade-os/wallet/b9edc509e59025e8966162a06c99ea5ecdc2a1c3/public/arkade-icon.svg
+gallery:
+  - https://raw.githubusercontent.com/arkade-os/wallet/b9edc509e59025e8966162a06c99ea5ecdc2a1c3/mockup/new-wallet.png
+  - https://raw.githubusercontent.com/arkade-os/wallet/b9edc509e59025e8966162a06c99ea5ecdc2a1c3/mockup/home-arkade-wallet.png
+port: 33046
+path: /
+uiMode: proxy

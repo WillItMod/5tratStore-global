@@ -1,0 +1,30 @@
+schemaVersion: 2
+status: pending
+appId: it-tools
+appVersion: 2024.10.22-7ca5933
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/CorentinTh/it-tools
+  sourceCommit: 5732483fc24a6e6818839060bdf3cc7d9d324b9f
+  license: GPL-3.0-only
+  licenseEvidence: https://github.com/CorentinTh/it-tools/blob/v2024.10.22-7ca5933/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [local-compose-test, proxmox-stratumos-compose-test], architectures: [amd64, arm64], installTested: true, startTested: true, updateTested: true, backupTested: false, restoreTested: false, backupNotApplicable: true, restoreNotApplicable: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true, capabilitiesAdded: [CHOWN, NET_BIND_SERVICE, SETGID, SETUID]}
+notes: >-
+  HOLD. The 2024 stable image passed local arm64 and Proxmox StratumOS amd64
+  Compose lifecycles, including start, rendered UI, restart, digest re-pull and
+  clean uninstall, but is not releasable. A Trivy 0.72.0 scan on 2026-08-01
+  reported 38 fixable operating
+  system package findings at high or critical severity (35 high and 3 critical)
+  and identified its Alpine 3.20 base as end-of-support. There is no persistent
+  server data, so backup and restore are not applicable. The recipe pulls the exact
+  multi-architecture image published by the upstream repository's release
+  workflow and pinned to its immutable manifest digest. The app has no host
+  mounts, persistent server data, device access, Docker socket, privileged mode
+  or host networking. All Linux capabilities are dropped except the four needed
+  by the upstream Nginx entrypoint to prepare cache ownership, bind port 80 and
+  switch its workers to the nginx user. The tagged upstream icon and banner
+  remain direct links; the store does not copy them.

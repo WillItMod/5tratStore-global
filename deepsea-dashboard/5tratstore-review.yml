@@ -1,0 +1,30 @@
+schemaVersion: 2
+status: pending
+appId: deepsea-dashboard
+appVersion: 2.0.4
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/Djobleezy/DeepSea-Dashboard
+  sourceCommit: f62c8dd5e3786b6612028689b051b0482d9b5963
+  license: MIT
+  licenseEvidence: https://github.com/Djobleezy/DeepSea-Dashboard/blob/f62c8dd5e3786b6612028689b051b0482d9b5963/LICENSE.md
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false, sourceBuild: upstream-dockerfile, reproducibleBuild: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [proxmox-stratumos-compose-test], architectures: [amd64], installTested: true, startTested: true, updateTested: true, backupTested: true, restoreTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  HOLD pending an upstream reproducible artifact and dependency security fix.
+  The user's node builds
+  the upstream Dockerfile from the full reviewed commit. No upstream source or
+  application image is carried by the store. Managed mounts contain only the
+  app's settings and database; Redis is an ephemeral project-network-only
+  cache whose non-user internal password may appear in upstream startup logs.
+  The upstream Dockerfile floats base images, package-manager inputs and Python
+  minimum-version constraints, so the same commit can build different contents.
+  Its reviewed production frontend dependencies also contain React Router open
+  redirect/XSS advisories. Install, rendered UI, restart persistence, source
+  rebuild/update, managed SQLite/config backup and restore, and clean uninstall
+  passed on the amd64 Proxmox StratumOS test guest. The build independently
+  reported six high-severity npm findings, so the successful lifecycle does not
+  resolve the reproducibility or dependency-security blockers.

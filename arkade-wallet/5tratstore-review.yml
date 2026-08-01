@@ -1,0 +1,30 @@
+schemaVersion: 2
+status: pending
+appId: arkade-wallet
+appVersion: 2026.08.01-b9edc509
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/arkade-os/wallet
+  sourceCommit: b9edc509e59025e8966162a06c99ea5ecdc2a1c3
+  license: MIT
+  licenseEvidence: https://github.com/arkade-os/wallet/blob/b9edc509e59025e8966162a06c99ea5ecdc2a1c3/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [proxmox-stratumos-compose-test], architectures: [amd64], installTested: true, startTested: true, updateTested: true, backupTested: false, restoreTested: false, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  HOLD. Arkade stores custody-sensitive wallet material in browser storage, but
+  the current 5tratumOS proxy does not provide a unique secure origin per app.
+  Do not approve until that isolation exists and recovery/restore is tested.
+  The reviewed upstream dependency tree also contains a high-severity ws
+  memory-exhaustion advisory fixed in ws 8.21.0. Direct upstream
+  multi-architecture image, no host mounts or persistent container data. The
+  default external Ark ecosystem services, HTTPS requirement, recovery
+  responsibility and funds risk are disclosed. Its install, rendered UI,
+  restart, pinned-image re-pull/update and clean uninstall passed on the amd64
+  Proxmox StratumOS test guest; that lifecycle result does not resolve the
+  secure-origin or wallet-recovery blockers.

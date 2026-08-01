@@ -1,0 +1,23 @@
+id: it-tools
+name: IT-Tools
+tagline: Browser-based utilities for developers and node operators
+description: >-
+  IT-Tools is the upstream collection of browser-based utilities for developers
+  and system operators. It includes encoders and decoders, hash and checksum
+  tools, network helpers, text converters, token inspection, time utilities and
+  other day-to-day diagnostics in one interface. The application is served
+  locally from the node and does not require an account. Some tools handle
+  sensitive input entirely in the browser, but users should still avoid pasting
+  secrets unless they understand the selected operation and trust their browser.
+version: 2024.10.22-7ca5933
+category: Utilities
+developer: Corentin Thomasset and contributors
+website: https://it-tools.tech/
+repo: https://github.com/CorentinTh/it-tools
+support: https://github.com/CorentinTh/it-tools/issues
+icon: https://raw.githubusercontent.com/CorentinTh/it-tools/v2024.10.22-7ca5933/public/android-chrome-512x512.png
+gallery:
+  - https://raw.githubusercontent.com/CorentinTh/it-tools/v2024.10.22-7ca5933/public/banner.png
+port: 33047
+path: /
+uiMode: proxy

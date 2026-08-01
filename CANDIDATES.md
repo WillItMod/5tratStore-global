@@ -14,6 +14,8 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
+| Arkade Wallet | Self-custodial Bitcoin PWA for on-chain UTXOs and Ark VTXOs | Active upstream; official multi-architecture GHCR image | MIT | **Hold:** current shared-origin app proxy is not safe for browser-held wallet material; upstream dependency audit also has one high-severity advisory |
+| IT-Tools | Local collection of browser-based developer and operator utilities | Official multi-architecture GHCR release image | GPL-3.0-only | **Hold:** local arm64 lifecycle passed, but the last stable image uses an end-of-support base and has 38 fixable high/critical package findings |
 | Gleec Wallet (Komodo DeFi SDK) | Self-custodial multi-chain wallet and atomic-swap DEX | Current Gleec/Komodo product; release 0.9.5 | GPL-3.0; hosted-service terms separate | **Highest priority, delivery/security hold:** GPL is compatible with a recipe-only listing; require an official direct runtime artifact and HTTPS wallet delivery |
 | Tailscale | Private encrypted networking between the user's devices | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | **Approved:** 1.98.10 userspace recipe lifecycle-tested on amd64; user account, arm64 and Sol/high follow-up tracked |
 | Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
@@ -67,13 +69,15 @@ should be prioritised even though their public adoption signals are smaller.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
+| DeepSea Dashboard | OCEAN pool mining, worker and profitability dashboard | Active upstream; release 2.0.4 | MIT | **Hold:** non-reproducible upstream build inputs and production React Router security advisories; corrected install seed path still needs Proxmox lifecycle and recovery test |
+| Bitaxe Sentry | Bitaxe telemetry, history and alerts | Active upstream; release 0.8.0 | MIT | **Hold:** non-reproducible upstream build inputs and v0.8.0 logs configured Discord webhook credentials; requires upstream fixes before testing |
 | DATUM Gateway | Decentralised Bitcoin mining gateway | 146 stars; release 0.4.1beta | MIT licence file present; trademark excluded | Priority research; independent image build and amd64 miner/node interoperability required |
 | Stratum V2 SRI | Stratum V2 protocol and mining infrastructure | 350 | Dual MIT/Apache-2.0 licence files present | Priority research; package only stable upstream components |
 | ckpool | Bitcoin mining pool server | 24 | GPL-3.0 | Priority research; find an official direct runtime artifact and test pool safety |
-| Public Pool | Solo mining pool UI/service | 17 | No repository licence found | Hold: obtain explicit upstream permission or a licence grant |
+| Public Pool | Solo Bitcoin mining pool service | Active upstream; official commit-tagged multi-architecture GHCR image | GPL-3.0-only | Priority research; licence and artifact are suitable, but secure Bitcoin RPC configuration and the separately licensed UI still need design |
 | HashWatcher Remote Monitoring Setup | Guided remote miner monitoring setup | Direct project-developer permission recorded 2026-08-01 | Proprietary; permission documented beside recipe | **Approved:** 1.3.0 recipe lifecycle-tested on amd64; real tailnet/miner, arm64 and Sol/high follow-up pending |
 
-Upstream repositories, in the same order:
+Original upstream repositories referenced in this register:
 
 - https://github.com/louislam/uptime-kuma
 - https://github.com/netdata/netdata
@@ -100,7 +104,11 @@ Upstream repositories, in the same order:
 - https://github.com/OCEAN-xyz/datum_gateway
 - https://github.com/stratum-mining/stratum
 - https://github.com/ckolivas/ckpool
-- https://github.com/benjamin-wilson/public-pool-app
+- https://github.com/benjamin-wilson/public-pool
+- https://github.com/CorentinTh/it-tools
+- https://github.com/arkade-os/wallet
+- https://github.com/Djobleezy/DeepSea-Dashboard
+- https://github.com/zachchan105/bitaxe-sentry
 
 ## Promotion order
 

@@ -1,0 +1,61 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8000
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - >-
+        install -d -m 700 /data &&
+        test -f /data/config.json &&
+        chown -R 100:101 /data
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    security_opt:
+      - no-new-privileges:true
+  redis:
+    image: redis:7.4.10-alpine@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
+    restart: unless-stopped
+    command:
+      - sh
+      - -c
+      - exec redis-server --save '' --appendonly no --maxmemory 128mb --maxmemory-policy allkeys-lru --requirepass "$$REDIS_PASSWORD"
+    environment:
+      REDIS_PASSWORD: deepsea-internal-cache-only
+    tmpfs:
+      - /data:size=32m,mode=0700
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: [CMD-SHELL, 'redis-cli -a "$$REDIS_PASSWORD" ping | grep -q PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 8
+  app:
+    build:
+      context: https://github.com/Djobleezy/DeepSea-Dashboard.git#f62c8dd5e3786b6612028689b051b0482d9b5963
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33044:8000
+    environment:
+      CONFIG_PATH: /data/config.json
+      DB_PATH: /data/deepsea.db
+      REDIS_PASSWORD: deepsea-internal-cache-only
+      REDIS_URL: redis://:deepsea-internal-cache-only@redis:6379/0
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy

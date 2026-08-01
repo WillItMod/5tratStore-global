@@ -1,0 +1,22 @@
+id: bitaxe-sentry
+name: Bitaxe Sentry
+tagline: Monitor Bitaxe miners from a local dashboard
+description: >-
+  Bitaxe Sentry is the upstream monitoring dashboard for Bitaxe miners. Add only
+  miner addresses that you administer to track hashrate, temperature, voltage
+  and history, and optionally configure your own Discord webhook for alerts.
+  It does not mine, change firmware or hold funds. This recipe builds the
+  upstream Dockerfile locally from the reviewed commit, keeps its database in
+  managed app data, and exposes the dashboard only through 5tratumOS.
+version: 0.8.0
+category: Mining
+developer: Zach Price
+website: https://github.com/zachchan105/bitaxe-sentry
+repo: https://github.com/zachchan105/bitaxe-sentry
+support: https://github.com/zachchan105/bitaxe-sentry/issues
+icon: https://raw.githubusercontent.com/zachchan105/bitaxe-sentry/af7fcb34a3c451fbe503a73772300a38dec70931/public/logo.png
+gallery:
+  - https://raw.githubusercontent.com/zachchan105/bitaxe-sentry/af7fcb34a3c451fbe503a73772300a38dec70931/public/merged_image.png
+port: 33045
+path: /
+uiMode: proxy

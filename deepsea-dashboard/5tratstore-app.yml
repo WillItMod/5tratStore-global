@@ -1,0 +1,21 @@
+id: deepsea-dashboard
+name: DeepSea Dashboard
+tagline: OCEAN mining performance and profitability dashboard
+description: >-
+  DeepSea Dashboard is the upstream dashboard for miners using the OCEAN Bitcoin
+  mining pool. Add your own Bitcoin payout address and power-cost details in its
+  settings to view hashrate, earnings, workers and profitability. The app reads
+  public OCEAN and market-data services; it does not control miners, hold funds
+  or require a wallet private key. This recipe builds the upstream Dockerfile
+  locally from the reviewed commit and stores the dashboard database in managed
+  app data.
+version: 2.0.4
+category: Mining
+developer: DJObleezy
+website: https://github.com/Djobleezy/DeepSea-Dashboard
+repo: https://github.com/Djobleezy/DeepSea-Dashboard
+support: https://github.com/Djobleezy/DeepSea-Dashboard/issues
+icon: https://raw.githubusercontent.com/Djobleezy/DeepSea-Dashboard/f62c8dd5e3786b6612028689b051b0482d9b5963/frontend/public/icons/icon-512x512.png
+port: 33044
+path: /
+uiMode: proxy

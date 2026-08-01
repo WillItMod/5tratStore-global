@@ -1,0 +1,10 @@
+{
+  "wallet": "",
+  "power_cost": 0.12,
+  "power_usage": 3450,
+  "currency": "USD",
+  "timezone": "Europe/London",
+  "network_fee": 0.5,
+  "extended_history": false,
+  "exchange_rate_api_key": ""
+}

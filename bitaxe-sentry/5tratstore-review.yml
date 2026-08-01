@@ -1,0 +1,30 @@
+schemaVersion: 2
+status: pending
+appId: bitaxe-sentry
+appVersion: 0.8.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/zachchan105/bitaxe-sentry
+  sourceCommit: af7fcb34a3c451fbe503a73772300a38dec70931
+  license: MIT
+  licenseEvidence: https://github.com/zachchan105/bitaxe-sentry/blob/af7fcb34a3c451fbe503a73772300a38dec70931/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false, sourceBuild: upstream-dockerfile, reproducibleBuild: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [proxmox-stratumos-compose-test], architectures: [amd64], installTested: true, startTested: true, updateTested: true, backupTested: true, restoreTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  HOLD pending an upstream reproducible artifact and a credential-logging fix.
+  Upstream v0.8.0 logs the submitted settings dictionary, including a configured
+  Discord webhook URL, and must not be approved with that feature exposed. The
+  user's node builds
+  the upstream Dockerfile from the full reviewed commit. No upstream source or
+  application image is carried by the store. The two containers share only the
+  managed application database and do not receive host, device or Docker access.
+  The upstream Dockerfile floats its Python base and every Python requirement,
+  so the same commit can build different contents. The UI loads Bootstrap
+  assets from jsDelivr. Install, rendered UI, restart persistence, source
+  rebuild/update, managed SQLite backup and restore, and clean uninstall passed
+  on the amd64 Proxmox StratumOS test guest without configuring miners or a
+  Discord webhook. That lifecycle result does not resolve the reproducibility
+  or credential-logging blockers.

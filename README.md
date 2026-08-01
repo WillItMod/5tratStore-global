@@ -14,28 +14,46 @@ GLOBAL stores recipes only: original listing metadata, small configuration and
 initialisation files, notices, review evidence, and store-owned test captures.
 It does **not** contain or serve third-party application source, container
 images, executables, archives, or build outputs. When a user presses Install,
-their own node pulls the pinned artifact directly from the original upstream
-publisher. An installed app naturally retains that artifact locally while it
-runs; it is never stored by this repository.
+their own node pulls a digest-pinned image or a commit-pinned source tree
+directly from the original upstream publisher. A source build is permitted only
+when it uses the upstream project's own Dockerfile unchanged and remains local
+to the user's node. The resulting runtime is never stored by this repository.
 
-Projects without a suitable original upstream runtime artifact are held as
-candidates. GLOBAL will not build, mirror, or host a substitute image merely to
-add another app.
+Projects without either a suitable original upstream runtime artifact or an
+upstream-maintained Dockerfile are held as candidates. GLOBAL will not create,
+mirror, or host a substitute image merely to add another app.
 
 ## Approved catalogue
 
-- Uptime Kuma 2.4.0 — availability monitoring for pools, nodes, miners, and services.
-- Prometheus 3.13.2 — metrics collection for mining infrastructure.
-- Grafana 13.1.0 — dashboards for miner, node, pool, and host metrics.
-- ntfy 2.26.3 — private-by-default notifications for miner, node, pool, and system alerts.
-- Eclipse Mosquitto™ 2.1.2 — loopback-only MQTT for miner and system telemetry.
-- Node-RED 5.0.4 — authenticated, loopback-only automation for miner telemetry, alerts, and control flows.
-- HashWatcher Remote Monitoring Setup 1.3.0 — developer-authorised, private guided access to supported ASIC miners through the user's own Tailscale network.
+- **Bitcoin and mining:** Alby Hub, LNbits, HashWatcher Remote Monitoring
+  Setup, Node-RED and Eclipse Mosquitto™.
+- **Metrics, logs and alerts:** Uptime Kuma, Prometheus, Grafana, ntfy,
+  Alertmanager, InfluxDB, Telegraf, Grafana Loki, Prometheus Pushgateway,
+  VictoriaMetrics, Beszel Hub, VictoriaLogs, OpenTelemetry Collector, Gatus
+  and Mailpit.
+- **Private operations and storage:** Tailscale, Syncthing, rclone, NATS,
+  SeaweedFS, Gitea, SearXNG, PrivateBin and linkding.
+- **Other independently reviewed tools:** Actual Budget.
 
-Each recipe passed install, start, update, and uninstall testing on a supported
-5tratumOS `v0.7.3` build or `v0.7.4` release candidate on amd64. Approval
-evidence lives beside each recipe and the validator rejects any unapproved
-directory.
+There are 30 approved recipes. Exact versions and approval evidence live beside
+each package and are enforced by the validator.
+
+## Pending review
+
+- Arkade Wallet — held until the OS provides a unique secure app origin and the
+  upstream high-severity dependency advisory is fixed.
+- DeepSea Dashboard — held for reproducible upstream build inputs and frontend
+  security fixes before Proxmox and recovery testing.
+- Bitaxe Sentry — held for reproducible upstream build inputs and an upstream
+  fix that stops notification credentials entering logs.
+- IT-Tools — direct upstream multi-architecture release image; local ARM
+  lifecycle passed but the stale base image has fixable critical findings, so
+  it remains held before any Proxmox or release test.
+
+Every approved recipe passed the lifecycle declared in its review record.
+Approval evidence lives beside each recipe and the default validator rejects
+any unapproved directory. Maintainers can use `--allow-pending` for structural
+checks on a draft branch; that flag is never used for release validation.
 
 ## Catalogue contract
 
