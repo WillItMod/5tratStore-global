@@ -1,4 +1,4 @@
-schemaVersion: 1
+schemaVersion: 2
 status: approved
 appId: replace-me
 appVersion: 0.0.0
@@ -23,6 +23,8 @@ compatibility:
   installTested: true
   startTested: true
   updateTested: true
+  backupTested: true
+  restoreTested: true
   uninstallTested: true
 security:
   privileged: false
