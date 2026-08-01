@@ -1,0 +1,19 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 9333
+  app:
+    image: chrislusf/seaweedfs:4.40@sha256:52194fba4fecd0083c842158b3a902ba6e04a63619b2b0efcd08007bdb6a4602
+    command: ["mini", "-dir=/data"]
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33042:9333
+      - 127.0.0.1:33043:8333
+    environment:
+      AWS_ACCESS_KEY_ID: 5tratum
+      AWS_SECRET_ACCESS_KEY: ${APP_PASSWORD}
+      S3_BUCKET: 5tratum
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    security_opt: [no-new-privileges:true]

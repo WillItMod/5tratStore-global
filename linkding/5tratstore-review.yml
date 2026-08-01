@@ -1,0 +1,23 @@
+schemaVersion: 1
+status: approved
+appId: linkding
+appVersion: 1.45.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/sissbruecker/linkding
+  license: MIT
+  licenseEvidence: https://github.com/sissbruecker/linkding/blob/v1.45.0/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Official linkding image pinned to an immutable digest. It is intentionally
+  the upstream basic image rather than the larger browser-archive variant. The
+  initial upstream superuser feature uses the locally chosen app password; no
+  credentials leave the node. Its upstream entrypoint needs its normal
+  initial root-to-service-user setup, so capabilities are not forcibly dropped;
+  no extra capabilities are added. No host mounts, device access, Docker
+  socket, privileged mode or host networking are used. The icon and gallery are
+  direct original upstream assets.

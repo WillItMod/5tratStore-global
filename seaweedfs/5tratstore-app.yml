@@ -1,0 +1,20 @@
+id: seaweedfs
+name: SeaweedFS
+tagline: Single-node S3-compatible object storage
+description: >-
+  SeaweedFS is original upstream distributed file and object storage software.
+  This recipe uses the upstream single-node mini mode, creating a local S3
+  bucket named 5tratum for node-owned tooling and backups. Its master console
+  is available through 5tratumOS; the S3 endpoint is loopback-only and uses
+  the app password as its secret. It is not an off-site backup: arrange a
+  separate tested backup of the managed app data before relying on it.
+version: 4.40
+category: Storage and Backup
+developer: SeaweedFS contributors
+website: https://seaweedfs.com/
+repo: https://github.com/seaweedfs/seaweedfs
+support: https://github.com/seaweedfs/seaweedfs/issues
+icon: https://raw.githubusercontent.com/seaweedfs/seaweedfs/4.40/weed/static/favicon.ico
+port: 33042
+path: /
+uiMode: proxy

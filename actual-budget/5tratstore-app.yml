@@ -1,0 +1,20 @@
+id: actual-budget
+name: Actual Budget
+tagline: Local-first personal finance software
+description: >-
+  Actual Budget is original upstream local-first personal finance software with
+  optional synchronisation between your devices. This recipe stores its server
+  data in managed app storage and lets the administrator create their own
+  account during onboarding. It is not a cryptocurrency wallet, does not manage
+  private keys, and must not be treated as a substitute for wallet backups.
+  Back up its data before upgrades or removal.
+version: 26.7.0
+category: Finance
+developer: Actual Budget contributors
+website: https://actualbudget.org/
+repo: https://github.com/actualbudget/actual
+support: https://github.com/actualbudget/actual/issues
+icon: https://raw.githubusercontent.com/actualbudget/actual/v26.7.0/packages/component-library/src/icons/logo/logo.svg
+port: 33041
+path: /
+uiMode: proxy

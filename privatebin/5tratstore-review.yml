@@ -1,0 +1,21 @@
+schemaVersion: 1
+status: approved
+appId: privatebin
+appVersion: 2.0.5
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/PrivateBin/PrivateBin
+  license: Zlib/libpng
+  licenseEvidence: https://github.com/PrivateBin/PrivateBin/blob/2.0.5/LICENSE.md
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Official PrivateBin image pinned to an immutable digest. Only the upstream
+  data directory persists. The service is loopback-bound and presented through
+  the authenticated 5tratumOS proxy; PrivateBin's own upstream documentation
+  requires HTTPS for confidential use. No host mounts, device access, Docker
+  socket, privileged mode or host networking are used. The upstream CC-BY logo
+  is linked directly and attributed in LICENSES.md.

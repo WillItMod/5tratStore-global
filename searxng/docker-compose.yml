@@ -1,0 +1,15 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8080
+  app:
+    image: searxng/searxng:2026.8.1-8892414dc@sha256:ec536bcd1e83577aad4cc07f7ecb9a30858a9a905d2d57c8796abc83f872a036
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33038:8080
+    volumes:
+      - ${APP_DATA_DIR}/data:/etc/searxng
+      - ${APP_DATA_DIR}/cache:/var/cache/searxng
+    security_opt:
+      - no-new-privileges:true

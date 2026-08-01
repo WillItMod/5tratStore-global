@@ -1,0 +1,14 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8080
+  app:
+    image: privatebin/nginx-fpm-alpine:2.0.5@sha256:91e3adf17da1c9e2715cb57ff22940a6644252a5488d9819a64eebbaf64cc58a
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33039:8080
+    volumes:
+      - ${APP_DATA_DIR}/data:/srv/data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
