@@ -1,0 +1,22 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 5572
+  app:
+    image: rclone/rclone:1.75.0@sha256:b06aed988cf5967de7c25be5925240983981c757f4ed1ac9d2fa659d51d60548
+    command:
+      - rcd
+      - --rc-web-gui
+      - --rc-web-gui-no-open-browser
+      - --rc-addr=:5572
+      - --rc-user=5tratum
+      - --rc-pass=${APP_PASSWORD}
+      - --config=/config/rclone.conf
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33025:5572
+    volumes:
+      - ${APP_DATA_DIR}/data:/config
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
