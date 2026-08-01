@@ -14,6 +14,8 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
+| Gleec Wallet (Komodo DeFi SDK) | Self-custodial multi-chain wallet and atomic-swap DEX | Current Gleec/Komodo product; release 0.9.5 | GPL-3.0; hosted-service terms separate | **Highest priority, legal/security hold:** clarify UK/global service terms and require HTTPS wallet delivery |
+| Tailscale | Private remote access to miners and node services | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | Proxmox lifecycle passed; real tailnet/arm64 tests and Sol/high review pending |
 | Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
 | Netdata | Host and container monitoring | 79,968 | GPL-3.0 | Research; resource/security review needed |
 | Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | Research; pair with data source |
@@ -29,7 +31,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | BTC RPC Explorer | Bitcoin node explorer | 1,791 | MIT | Research; likely early candidate |
 | electrs | Electrum server | 1,382 | MIT | Research; node dependency and disk load |
 | Esplora | Bitcoin explorer | 1,254 | MIT | Research; indexer dependency |
-| LNbits | Lightning accounts and tools | 1,224 | MIT | Research; requires supported Lightning backend |
+| LNbits | Lightning accounts and tools | 1,224 | MIT | Proxmox safe-default lifecycle passed; real Lightning/backup/arm64 tests and Sol/high review pending |
 | RTL | Lightning node UI | 796 | MIT | Research; requires supported Lightning backend |
 | Miningcore | Mining pool server | 790 | MIT | Hold: upstream repository is archived |
 | ElectrumX | Electrum server | 567 | MIT | Research; storage/performance validation |
@@ -45,11 +47,11 @@ should be prioritised even though their public adoption signals are smaller.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
-| DATUM Gateway | Decentralised Bitcoin mining gateway | 146 stars | MIT licence file present | Priority research; validate miner and node interoperability |
+| DATUM Gateway | Decentralised Bitcoin mining gateway | 146 stars; release 0.4.1beta | MIT licence file present; trademark excluded | Priority research; independent image build and amd64 miner/node interoperability required |
 | Stratum V2 SRI | Stratum V2 protocol and mining infrastructure | 350 | Dual MIT/Apache-2.0 licence files present | Priority research; package only stable upstream components |
 | ckpool | Bitcoin mining pool server | 24 | GPL-3.0 | Priority research; source-offer and recipe obligations required |
 | Public Pool | Solo mining pool UI/service | 17 | No repository licence found | Hold: obtain explicit upstream permission or a licence grant |
-| HashWatcher | Miner monitoring and control | Permission offered by product owner | Proprietary permission record required | Priority research; obtain server artifact, deployment documentation, and written distribution permission |
+| HashWatcher Remote Monitoring Setup | Guided remote miner monitoring setup | Product owner approval reported | Durable public permission record still required | Proxmox lifecycle passed; real tailnet/miner tests and Sol/high review pending |
 
 Upstream repositories, in the same order:
 
