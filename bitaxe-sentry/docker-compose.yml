@@ -1,0 +1,81 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: web
+      APP_PORT: 8000
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - >-
+        install -d -m 700 -o 1000 -g 1000 /data &&
+        chown -R 1000:1000 /data &&
+        find /data -maxdepth 1 -type f -exec chmod 600 {} \;
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    security_opt:
+      - no-new-privileges:true
+  collector:
+    build:
+      context: https://github.com/zachchan105/bitaxe-sentry.git#af7fcb34a3c451fbe503a73772300a38dec70931
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_PATH: /var/lib/bitaxe/bitaxe_sentry.db
+      DB_DATA_DIR: /var/lib/bitaxe
+      POLL_INTERVAL_MINUTES: "15"
+      RETENTION_DAYS: "30"
+      BITAXE_ENDPOINTS: ""
+      DISCORD_WEBHOOK_URL: ""
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/bitaxe
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+  web:
+    build:
+      context: https://github.com/zachchan105/bitaxe-sentry.git#af7fcb34a3c451fbe503a73772300a38dec70931
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command:
+      - uvicorn
+      - bitaxe_sentry.sentry.webapp:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    ports:
+      - 127.0.0.1:33045:8000
+    environment:
+      DB_PATH: /var/lib/bitaxe/bitaxe_sentry.db
+      DB_DATA_DIR: /var/lib/bitaxe
+      POLL_INTERVAL_MINUTES: "15"
+      RETENTION_DAYS: "30"
+      BITAXE_ENDPOINTS: ""
+      DISCORD_WEBHOOK_URL: ""
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/bitaxe
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 8
+      start_period: 30s

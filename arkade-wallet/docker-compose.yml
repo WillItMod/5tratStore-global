@@ -1,0 +1,27 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 80
+  app:
+    image: ghcr.io/arkade-os/wallet:latest@sha256:f463ce88a9c8e6f9955877828a25421d33e2705266d882f12a51a3d2f7b35f4f
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33046:80
+    environment:
+      VITE_APP_VERSION: 2026.08.01-b9edc509
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - http://127.0.0.1/
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
