@@ -27,7 +27,8 @@ secure-infrastructure use case.
 - [ ] I did not copy another app store's recipe, listing text, screenshots, or artwork.
 - [ ] The upstream licence permits the proposed use/distribution, or written permission is attached.
 - [ ] Every container is official or provenance-documented and pinned by tag and multi-architecture digest.
-- [ ] Listing text is original and artwork rights are documented.
+- [ ] Listing text is original and artwork rights are documented; a native icon
+      includes separate trademark/brand-policy evidence.
 - [ ] Required licences, source links, copyright notices, and attribution are included.
 - [ ] No credentials, wallet material, private data, databases, or runtime state are committed.
 - [ ] Privileges, mounts, devices, ports, secrets, and external connections are disclosed above.

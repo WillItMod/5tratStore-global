@@ -52,8 +52,10 @@ Do not submit:
 3. Copy `templates/app/` to a new top-level directory named with a lowercase,
    stable app ID, for example `my-miner-monitor/`.
 4. Write original listing text based on upstream facts.
-5. Replace every `replace-me` value and add an original or explicitly licensed
-   512×512 `icon.png`.
+5. Replace every `replace-me` value and add a rights-cleared 512×512
+   `icon.png`. Prefer the native application icon only when the upstream owner
+   explicitly permits this catalogue-identification use; otherwise create
+   neutral original artwork.
 6. Record the exact upstream version, licence evidence, source link, official
    image tag and multi-architecture digest in `LICENSES.md`.
 7. Keep `5tratstore-review.yml` at `status: proposed`, leave maintainer review
@@ -91,6 +93,27 @@ personal addresses, databases, or runtime state.
 - Store no secrets in listing metadata or Compose defaults.
 - Use a dedicated, non-conflicting host port allocated during review.
 
+## Icons and trademarks
+
+A software licence and a logo licence are separate questions. An MIT, Apache,
+GPL, or other open-source code licence does not by itself prove that a project
+name, logo, or brand mark may be redistributed in an app catalogue.
+
+- Use the official native icon when an upstream trademark/brand policy, asset
+  licence, or written permission expressly covers this use.
+- Preserve the official colours, proportions, clear space, and attribution
+  required by that policy. Do not blend a third-party logo into 5tratStore or
+  5tratumOS branding.
+- Link the exact policy, licence, or permission record in `LICENSES.md` and
+  describe any required attribution.
+- If permission is missing, ambiguous, or limited to the upstream product,
+  submit original trademark-neutral artwork instead.
+- An icon must identify the third-party application without suggesting that its
+  developer endorses, sponsors, or maintains 5tratumOS.
+
+Maintainers may replace an uncleared native logo with neutral artwork or hold
+the submission until the upstream owner grants permission.
+
 ## Local checks
 
 Install the validator dependency and run:
@@ -118,7 +141,8 @@ Maintainers verify:
 - original upstream identity and exact version;
 - licence and notice obligations;
 - container publisher and immutable digest;
-- original or cleared listing text and artwork;
+- original or cleared listing text and artwork, with separate trademark/logo
+  evidence when native branding is used;
 - network endpoints, secrets, mounts, devices, and privileges;
 - persistent data ownership and recovery behaviour;
 - install, start, HTTP/service readiness, update, restart, and uninstall;
