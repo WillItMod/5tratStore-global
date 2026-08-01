@@ -33,6 +33,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | VictoriaMetrics | High-performance time-series database and monitoring | Current 1.148.0 release | Apache-2.0 | **Approved:** 1.148.0 single-node VMUI recipe lifecycle-tested on amd64; intended as an alternative metrics backend |
 | Alby Hub | Self-custodial Bitcoin and Lightning hub | Current 1.23.0 release | Apache-2.0 | **Approved:** 1.23.0 privacy-hardened upstream onboarding recipe lifecycle-tested on amd64; wallet, keys and Lightning backend remain administrator choices |
 | Gitea | Lightweight self-hosted Git service | Current 1.27.1 release | MIT | **Approved:** 1.27.1 rootless upstream recipe lifecycle-tested on amd64; administrator setup and repository access remain user-controlled |
+| Mailpit | Local SMTP and email testing tool | Current 1.30.6 release | MIT | **Approved:** 1.30.6 local-only upstream test inbox lifecycle-tested on amd64; use to validate alert integrations before real delivery |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

@@ -1,0 +1,19 @@
+id: mailpit
+name: Mailpit
+tagline: Local SMTP and email testing tool
+description: >-
+  Mailpit is a self-contained SMTP testing server with a web inbox. Use it to
+  safely check e-mail alerting from node monitoring and automation before
+  routing notifications to a real mail service. Both the inbox and SMTP listener
+  are bound to this node only; Mailpit does not send captured messages onward by
+  default.
+version: 1.30.6
+category: Monitoring
+developer: Ralph Slooten and contributors
+website: https://mailpit.axllent.org/
+repo: https://github.com/axllent/mailpit
+support: https://github.com/axllent/mailpit/discussions
+icon: https://raw.githubusercontent.com/axllent/mailpit/v1.30.6/server/ui/favicon.svg
+port: 33029
+path: /
+uiMode: proxy

@@ -1,0 +1,20 @@
+schemaVersion: 1
+status: approved
+appId: mailpit
+appVersion: 1.30.6
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/axllent/mailpit
+  license: MIT
+  licenseEvidence: https://github.com/axllent/mailpit/blob/v1.30.6/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Original upstream image and artwork, direct user-node pull and no store
+  payload mirror. Both the web inbox and SMTP listener are loopback-bound and
+  no relay configuration is supplied. The isolated test delivered a local SMTP
+  message to the upstream inbox, then verified update and shutdown. No host
+  mounts, Docker socket, device access, privileged mode or host networking.
