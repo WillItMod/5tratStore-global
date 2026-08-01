@@ -20,7 +20,6 @@ REQUIRED_FILES = {
     "docker-compose.yml",
     "5tratstore-review.yml",
     "LICENSES.md",
-    "icon.png",
 }
 MAX_APP_FILE_BYTES = 2 * 1024 * 1024
 ALLOWED_APP_SUFFIXES = {
@@ -98,6 +97,10 @@ def validate_app(app_dir: Path) -> list[str]:
         errors.append(f"{app_dir.name}: manifest id must match directory name")
     if not version:
         errors.append(f"{app_dir.name}: manifest version is required")
+    icon = str(manifest.get("icon") or "").strip()
+    local_icon = any((app_dir / name).is_file() for name in ("icon.png", "icon.jpg", "icon.jpeg", "icon.svg", "logo.png", "logo.jpg", "logo.jpeg", "logo.svg"))
+    if not local_icon and not icon.startswith("https://"):
+        errors.append(f"{app_dir.name}: a local icon or HTTPS upstream icon URL is required")
     if review.get("schemaVersion") != 1 or review.get("status") != "approved":
         errors.append(f"{app_dir.name}: review must be schemaVersion 1 and approved")
     if str(review.get("appId") or "").strip().lower() != app_id:

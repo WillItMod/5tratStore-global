@@ -10,13 +10,14 @@
 - Initialisation helper: Alpine Linux `alpine:3.22.1`
   - Multi-architecture index digest: `sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1`
   - Licence information: https://www.alpinelinux.org/about/
-- `icon.png` is original 5tratStore catalogue artwork covered by this
-  repository's MIT licence. It is not the upstream project's logo.
+- The icon is loaded directly from the official Eclipse Mosquitto project
+  asset: https://raw.githubusercontent.com/eclipse-mosquitto/mosquitto/v2.1.2/logo/mosquitto-logo-only.svg
 
 Eclipse Mosquitto™ is a trademark of Eclipse Foundation AISBL. The mark is
 used only to identify the unmodified upstream software. This independent
 5tratStore recipe is not affiliated with or endorsed by the Eclipse Foundation.
-The catalogue icon is original artwork and does not use an Eclipse project logo.
+The catalogue uses the direct official project icon solely to identify the
+unmodified upstream software.
 
 Trademark policy reviewed:
 https://www.eclipse.org/legal/logo-guidelines/

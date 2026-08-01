@@ -1,18 +1,17 @@
 id: node-red
 name: Node-RED
-tagline: Automate miner telemetry, alerts, and control workflows
+tagline: Low-code programming for event-driven applications
 description: >-
-  Node-RED is a low-code, event-driven automation tool. Use it to connect miner
-  APIs, MQTT telemetry, monitoring services, notifications, and other local or
-  remote endpoints into operator-defined flows. This independent 5tratStore
-  recipe keeps the editor behind the authenticated 5tratumOS proxy and does
-  not expose it directly to the LAN. No affiliation or endorsement is implied.
+  Node-RED is a low-code programming tool for wiring together hardware devices,
+  APIs and online services as event-driven flows. This recipe runs the
+  unmodified upstream editor behind the authenticated 5tratumOS proxy.
 version: 5.0.4
 category: Mining automation
 developer: OpenJS Foundation and Node-RED contributors
 website: https://nodered.org/
 repo: https://github.com/node-red/node-red
 support: https://github.com/node-red/node-red/issues
+icon: https://raw.githubusercontent.com/node-red/node-red/5.0.4/packages/node_modules/@node-red/editor-client/src/images/node-red-icon.svg
 port: 33015
 path: /
 uiMode: proxy

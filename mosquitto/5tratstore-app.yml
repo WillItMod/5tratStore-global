@@ -1,17 +1,17 @@
 id: mosquitto
 name: Eclipse Mosquitto™
-tagline: Local MQTT broker for mining and system telemetry
+tagline: An open source MQTT broker
 description: >-
-  Eclipse Mosquitto™ is a lightweight MQTT broker used by the 5tratumOS event
-  and telemetry integration. This independent recipe binds MQTT to the node's
-  loopback interface only, so it is not exposed to the LAN or internet by
-  default. No affiliation or endorsement is implied.
+  Eclipse Mosquitto™ is an open source MQTT broker. This recipe uses the
+  unmodified upstream image and binds the broker to the node's loopback
+  interface by default, so it is not exposed to the LAN or internet.
 version: 2.1.2
 category: Mining infrastructure
 developer: Eclipse Mosquitto contributors
 website: https://mosquitto.org/
 repo: https://github.com/eclipse-mosquitto/mosquitto
 support: https://github.com/eclipse-mosquitto/mosquitto/issues
+icon: https://raw.githubusercontent.com/eclipse-mosquitto/mosquitto/v2.1.2/logo/mosquitto-logo-only.svg
 port: 0
 services:
   init:

@@ -1,0 +1,20 @@
+id: alertmanager
+name: Alertmanager
+tagline: Route and silence alerts from mining and node monitoring
+description: >-
+  Alertmanager groups, routes and silences alerts sent by Prometheus and other
+  monitoring tools. It starts with a safe discard receiver: no alert is sent
+  to a third-party service until the administrator deliberately configures one.
+  The dashboard is available only through the authenticated 5tratumOS proxy.
+version: 0.33.1
+category: Monitoring
+developer: Prometheus Authors
+website: https://prometheus.io/docs/alerting/latest/alertmanager/
+repo: https://github.com/prometheus/alertmanager
+support: https://github.com/prometheus/alertmanager/issues
+icon: https://raw.githubusercontent.com/prometheus/prometheus/v3.13.2/documentation/images/prometheus-logo.svg
+gallery:
+  - screenshots/overview.png
+port: 33018
+path: /
+uiMode: proxy
