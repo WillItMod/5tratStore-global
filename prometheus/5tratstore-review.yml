@@ -8,6 +8,10 @@ upstream:
   sourceUrl: https://github.com/prometheus/prometheus
   license: Apache-2.0
   licenseEvidence: https://github.com/prometheus/prometheus/blob/v3.13.2/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
 rights:
   packageOriginal: true
   softwareDistributionCleared: true

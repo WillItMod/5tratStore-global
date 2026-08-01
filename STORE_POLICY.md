@@ -4,21 +4,37 @@ An app is eligible only when all of the following are true:
 
 1. The package is created from the original upstream project, not copied from
    another app store.
-2. The upstream software licence permits the proposed use and distribution.
-3. Container images are pinned by version or digest and their distribution or
-   direct use is permitted.
-4. Listing text and screenshots are original or supplied with explicit reuse
+2. The upstream software licence permits the proposed direct user installation
+   and use. Where a third-party hosted service is involved, its own terms and
+   jurisdiction restrictions are also reviewed and disclosed.
+3. 5tratStore GLOBAL is **recipe-only**. It never hosts, mirrors, vendors,
+   repackages, rebuilds, or serves third-party application source, images,
+   binaries, archives, or build outputs. Each user node pulls a pinned runtime
+   artifact directly from the original upstream publisher's registry or release
+   endpoint when the user chooses Install.
+4. Container images are pinned by version and digest. The review records the
+   direct-upstream delivery model and the upstream source and licence evidence.
+5. Listing text and screenshots are original or supplied with explicit reuse
    permission.
-5. Icon and other artwork rights are documented.
-6. Required copyright, licence, source, and attribution notices are included.
-7. The app has been installed, started, updated, backed up where applicable,
+6. Icon and other artwork rights are documented.
+7. Required copyright, licence, source, and attribution notices are included.
+8. The app has been installed, started, updated, backed up where applicable,
    and uninstalled on every declared architecture and OS version.
-8. Network access, host mounts, device access, privileged mode, secrets, and
+9. Network access, host mounts, device access, privileged mode, secrets, and
    persistent data locations have been reviewed and disclosed.
-9. A named reviewer records approval in `5tratstore-review.yml`.
+10. A named reviewer records approval in `5tratstore-review.yml`.
+
+The user node will retain the upstream runtime artifact while the app is
+installed, because that is what runs the application. That runtime cache is
+user-owned node state, not content stored or served by 5tratStore.
+
+If an upstream project does not provide a suitable official runtime artifact,
+it stays a candidate until there is one. GLOBAL does not solve that gap by
+building or hosting an unofficial image.
 
 “Publicly visible” or “available on GitHub” is not sufficient evidence of a
-right to copy or redistribute an app package.
+right to use an upstream artifact, access an upstream service, or use project
+branding in a store listing.
 
 Approval applies only to the reviewed version. Material changes to images,
 licensing, permissions, or upstream ownership require a new review.

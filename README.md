@@ -8,6 +8,20 @@ not a mirror or fork of another app store. Every app is independently packaged
 from its original upstream project and must pass the review gate in
 [STORE_POLICY.md](STORE_POLICY.md).
 
+## Delivery model
+
+GLOBAL stores recipes only: original listing metadata, small configuration and
+initialisation files, notices, review evidence, and neutral catalogue artwork.
+It does **not** contain or serve third-party application source, container
+images, executables, archives, or build outputs. When a user presses Install,
+their own node pulls the pinned artifact directly from the original upstream
+publisher. An installed app naturally retains that artifact locally while it
+runs; it is never stored by this repository.
+
+Projects without a suitable original upstream runtime artifact are held as
+candidates. GLOBAL will not build, mirror, or host a substitute image merely to
+add another app.
+
 ## Approved catalogue
 
 - Uptime Kuma 2.4.0 — availability monitoring for pools, nodes, miners, and services.
@@ -31,6 +45,9 @@ Each app lives in a top-level directory and must include:
 - `5tratstore-review.yml` — signed-off legal and compatibility evidence.
 - `LICENSES.md` — applicable licences, notices, and artifact provenance.
 - `icon.png` — artwork whose reuse rights are documented in the review record.
+
+Every approved review declares `delivery.mode: direct-upstream-artifact`,
+`storePayload: recipe-only`, and `mirrorsThirdPartyPayload: false`.
 
 Run `python3 scripts/validate_store.py` before proposing an app.
 

@@ -8,6 +8,10 @@ upstream:
   sourceUrl: https://github.com/node-red/node-red
   license: Apache-2.0
   licenseEvidence: https://github.com/node-red/node-red/blob/5.0.4/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
 rights:
   packageOriginal: true
   softwareDistributionCleared: true

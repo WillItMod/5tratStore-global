@@ -8,6 +8,10 @@ upstream:
   sourceUrl: https://github.com/louislam/uptime-kuma
   license: MIT
   licenseEvidence: https://github.com/louislam/uptime-kuma/blob/2.4.0/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
 rights:
   packageOriginal: true
   softwareDistributionCleared: true
