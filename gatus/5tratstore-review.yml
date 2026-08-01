@@ -1,0 +1,40 @@
+schemaVersion: 1
+status: approved
+appId: gatus
+appVersion: 5.36.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/TwiN/gatus
+  license: Apache-2.0
+  licenseEvidence: https://github.com/TwiN/gatus/blob/v5.36.0/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions: [v0.7.4-test-manual-global-install]
+  architectures: [amd64]
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: >-
+  Original upstream image, direct user-node pull, no store payload mirror.
+  The UI is loopback-bound and has no host mounts, Docker socket, device access,
+  privileged mode or host networking. Lifecycle verification is performed on
+  the isolated amd64 Proxmox CT; the app is disabled after testing.

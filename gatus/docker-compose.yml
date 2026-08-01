@@ -1,0 +1,16 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8080
+  app:
+    image: twinproduction/gatus:v5.36.0@sha256:c5f210d095fa78e6efaa20ffeb14803f2ba4f10615e16a6d12087697149617f0
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33019:8080
+    volumes:
+      - ${APP_DATA_DIR}/data/config.yaml:/config/config.yaml:ro
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

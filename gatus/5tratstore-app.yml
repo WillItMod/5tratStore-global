@@ -1,0 +1,20 @@
+id: gatus
+name: Gatus
+tagline: Automated service health dashboard
+description: >-
+  Gatus is an open-source, developer-oriented status page and alerting service.
+  It monitors HTTP endpoints and displays their health history. The initial
+  configuration checks the application's own health endpoint only; users add
+  their own services explicitly.
+version: 5.36.0
+category: Monitoring
+developer: TwiN and contributors
+website: https://gatus.io/
+repo: https://github.com/TwiN/gatus
+support: https://github.com/TwiN/gatus/issues
+icon: https://raw.githubusercontent.com/TwiN/gatus/v5.36.0/.github/assets/logo.svg
+gallery:
+  - screenshots/overview.png
+port: 33019
+path: /
+uiMode: proxy
