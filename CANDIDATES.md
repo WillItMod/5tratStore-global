@@ -31,7 +31,8 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Syncthing | Private node-backup and file synchronisation | Current 2.1.2 release | MPL-2.0 | **Approved:** 2.1.2 loopback UI recipe lifecycle-tested on amd64; pairing and folder sharing are administrator initiated |
 | rclone | Remote-storage and backup transfer tool | Current 1.75.0 release | MIT | **Approved:** 1.75.0 authenticated upstream web interface lifecycle-tested on amd64; remote credentials and destinations remain administrator-configured |
 | VictoriaMetrics | High-performance time-series database and monitoring | Current 1.148.0 release | Apache-2.0 | **Approved:** 1.148.0 single-node VMUI recipe lifecycle-tested on amd64; intended as an alternative metrics backend |
-| Alby Hub | Self-custodial Bitcoin and Lightning hub | Current 1.23.0 release | Apache-2.0 | **Review in progress:** official server image and first-run onboarding; no wallet, keys or Lightning backend will be preconfigured |
+| Alby Hub | Self-custodial Bitcoin and Lightning hub | Current 1.23.0 release | Apache-2.0 | **Approved:** 1.23.0 privacy-hardened upstream onboarding recipe lifecycle-tested on amd64; wallet, keys and Lightning backend remain administrator choices |
+| Gitea | Lightweight self-hosted Git service | Current 1.27.1 release | MIT | **Approved:** 1.27.1 rootless upstream recipe lifecycle-tested on amd64; administrator setup and repository access remain user-controlled |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

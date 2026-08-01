@@ -1,0 +1,20 @@
+schemaVersion: 1
+status: approved
+appId: gitea
+appVersion: 1.27.1
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/go-gitea/gitea
+  license: MIT
+  licenseEvidence: https://github.com/go-gitea/gitea/blob/v1.27.1/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Original upstream rootless image and artwork, direct user-node pull and no
+  store payload mirror. The loopback-only administrator setup stores state only
+  in its own data directory. Git-over-SSH is not exposed by this recipe. No
+  host mounts, Docker socket, device access, privileged mode or host networking.
+  Lifecycle-tested then disabled on the isolated amd64 CT.

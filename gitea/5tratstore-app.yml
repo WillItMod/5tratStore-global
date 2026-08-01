@@ -1,0 +1,19 @@
+id: gitea
+name: Gitea
+tagline: A painless self-hosted Git service
+description: >-
+  Gitea is a lightweight self-hosted Git service. This recipe runs Gitea's
+  original browser-based setup with its default embedded database and no public
+  SSH port. It is suitable for keeping node automation, configuration and
+  custom-store recipes under your own control. Complete the administrator setup
+  before creating repositories or inviting other users.
+version: 1.27.1
+category: Developer tools
+developer: Gitea Limited and contributors
+website: https://about.gitea.com/
+repo: https://github.com/go-gitea/gitea
+support: https://discourse.gitea.com/
+icon: https://raw.githubusercontent.com/go-gitea/gitea/v1.27.1/public/assets/img/logo.svg
+port: 33028
+path: /
+uiMode: proxy
