@@ -1,0 +1,20 @@
+schemaVersion: 1
+status: approved
+appId: victorialogs
+appVersion: 1.52.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/VictoriaMetrics/VictoriaLogs
+  license: Apache-2.0
+  licenseEvidence: https://github.com/VictoriaMetrics/VictoriaLogs/blob/v1.52.0/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Original upstream image and artwork, direct user-node pull, loopback-only
+  VMUI and no store payload mirror. The app starts with an empty private data
+  directory and does not read host or other application logs. No host mounts,
+  Docker socket, device access, privileged mode or host networking. Lifecycle-
+  tested then disabled on the isolated amd64 CT.
