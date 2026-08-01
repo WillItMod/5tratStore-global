@@ -1,0 +1,18 @@
+id: opentelemetry-collector
+name: OpenTelemetry Collector
+tagline: Vendor-neutral telemetry collection service
+description: >-
+  The OpenTelemetry Collector receives, processes and exports telemetry. This
+  starter recipe exposes local OTLP receivers and the original health endpoint;
+  received telemetry is written only to the Collector's own logs until you add
+  an exporter. It does not read host logs, metrics, Docker state or devices.
+version: 0.157.0
+category: Monitoring
+developer: OpenTelemetry Authors
+website: https://opentelemetry.io/
+repo: https://github.com/open-telemetry/opentelemetry-collector-releases
+support: https://github.com/open-telemetry/opentelemetry-collector-contrib/discussions
+icon: https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/static/img/logos/opentelemetry-icon-color.svg
+port: 33035
+path: /
+uiMode: proxy
