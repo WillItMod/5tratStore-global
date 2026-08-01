@@ -1,0 +1,61 @@
+name: App feedback
+description: Tell us whether a 5tratStore app works correctly on 5tratumOS
+title: "[App feedback] "
+labels:
+  - app-feedback
+body:
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Works correctly
+        - Installation failed
+        - Installed but did not start
+        - Started but does not work correctly
+        - Update failed
+        - Backup or restore failed
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: App and version
+      placeholder: app-id 1.2.3
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: 5tratumOS version and architecture
+      placeholder: v0.7.3-test / amd64
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What happened?
+      description: Include the action taken, expected result, actual result, and reproducible steps.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitised logs
+      description: Remove passwords, wallet seeds, API keys, addresses you consider private, and other secrets.
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I checked the report and removed secrets and private information.
+          required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Submission
+      options:
+        - label: I understand this is community feedback and not an emergency support channel.
+          required: true

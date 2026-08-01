@@ -19,6 +19,11 @@ Each app lives in a top-level directory and must include:
 
 Run `python3 scripts/validate_store.py` before proposing an app.
 
+Every app is linked to the repository's structured feedback form. Reports are
+user-reviewed and user-submitted; 5tratumOS does not silently upload telemetry
+or logs. Repeated install, runtime, update, or recovery failures can move an app
+back to review or remove it from the catalogue.
+
 ## Channels
 
 - MAIN contains ratified stable 5tratumOS and approved first-party releases.
