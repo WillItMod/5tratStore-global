@@ -1,0 +1,20 @@
+id: alby-hub
+name: Alby Hub
+tagline: Your own Bitcoin and Lightning hub
+description: >-
+  Alby Hub is self-custodial software for connecting to a Bitcoin and Lightning
+  wallet or node. This recipe opens Alby Hub's original first-run setup only;
+  it does not create a wallet, import keys, connect a Lightning backend or
+  expose any peer ports. Automatic Alby account linking and event reporting
+  are disabled; complete its onboarding yourself and back up any recovery
+  material before using it with funds.
+version: 1.23.0
+category: Bitcoin and Lightning
+developer: Alby
+website: https://albyhub.com/
+repo: https://github.com/getAlby/hub
+support: https://guides.getalby.com/user-guide/alby-hub
+icon: https://raw.githubusercontent.com/getAlby/hub/v1.23.0/frontend/public/icon-lightmode.svg
+port: 33027
+path: /
+uiMode: proxy

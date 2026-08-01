@@ -1,0 +1,19 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8080
+  app:
+    image: ghcr.io/getalby/hub:v1.23.0@sha256:03074e1cb7a1814fcecedfd6e2bf2b2fe8643b2891db03cfb634076252138962
+    user: "1000:1000"
+    environment:
+      WORK_DIR: /data/albyhub
+      SEND_EVENTS_TO_ALBY: "false"
+      AUTO_LINK_ALBY_ACCOUNT: "false"
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33027:8080
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
