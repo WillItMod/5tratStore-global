@@ -1,0 +1,20 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 8384
+  app:
+    image: syncthing/syncthing:2.1.2@sha256:4464f4161dd0251e20d46bb3aec83363db75d80cef1abdd5d5fd4054b04a004d
+    user: "1000:1000"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      STGUIADDRESS: 0.0.0.0:8384
+      STHOMEDIR: /var/syncthing/config
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33024:8384
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/syncthing
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

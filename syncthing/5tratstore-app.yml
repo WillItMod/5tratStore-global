@@ -1,0 +1,18 @@
+id: syncthing
+name: Syncthing
+tagline: Continuous, private file synchronisation
+description: >-
+  Syncthing continuously synchronises files directly between devices. This
+  recipe provides the original Syncthing web interface through 5tratumOS and
+  stores its configuration and folders locally. Pair only devices you control
+  and review folder paths before sharing node backups or configuration files.
+version: 2.1.2
+category: Backup and storage
+developer: Syncthing Project
+website: https://syncthing.net/
+repo: https://github.com/syncthing/syncthing
+support: https://forum.syncthing.net/
+icon: https://raw.githubusercontent.com/syncthing/syncthing/v2.1.2/assets/logo-only.svg
+port: 33024
+path: /
+uiMode: proxy
