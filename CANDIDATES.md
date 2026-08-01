@@ -14,10 +14,10 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
-| Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | Research; high utility |
+| Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
 | Netdata | Host and container monitoring | 79,968 | GPL-3.0 | Research; resource/security review needed |
 | Grafana | Mining and node dashboards | 75,905 | AGPL-3.0 | Research; pair with data source |
-| Prometheus | Metrics collection | 65,402 | Apache-2.0 | Research; strong support candidate |
+| Prometheus | Metrics collection | 65,402 | Apache-2.0 | **Approved:** 3.13.2 recipe tested on amd64 |
 | Mosquitto | MQTT for miner telemetry | 11,086 | Repository requires manual licence review | Research; strong support candidate |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |

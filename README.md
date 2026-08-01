@@ -3,9 +3,19 @@
 The 5tratumOS-owned catalogue for legally cleared, compatibility-tested
 third-party applications.
 
-This repository starts empty by design. It is not a mirror or fork of another
-app store. Every app is independently packaged from its original upstream
-project and must pass the review gate in [STORE_POLICY.md](STORE_POLICY.md).
+This repository started empty by design and remains deliberately small. It is
+not a mirror or fork of another app store. Every app is independently packaged
+from its original upstream project and must pass the review gate in
+[STORE_POLICY.md](STORE_POLICY.md).
+
+## Approved catalogue
+
+- Uptime Kuma 2.4.0 — availability monitoring for pools, nodes, miners, and services.
+- Prometheus 3.13.2 — metrics collection for mining infrastructure.
+
+Both recipes passed install, start, update, and uninstall testing on the
+`v0.7.3-test-5tratstore-rc2` amd64 candidate. Approval evidence lives beside
+each recipe and the validator rejects any unapproved directory.
 
 ## Catalogue contract
 
