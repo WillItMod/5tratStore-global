@@ -1,0 +1,41 @@
+schemaVersion: 1
+status: approved
+appId: mosquitto
+appVersion: 2.1.2
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/eclipse-mosquitto/mosquitto
+  license: EPL-2.0 OR BSD-3-Clause
+  licenseEvidence: https://github.com/eclipse-mosquitto/mosquitto/blob/v2.1.2/LICENSE.txt
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - v0.7.4-test-hashwatcher
+  architectures:
+    - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: >-
+  MQTT is deliberately bound to host loopback; anonymous access is not exposed
+  beyond the node. The listing uses the full Eclipse Mosquitto™ project name,
+  includes the Eclipse Foundation trademark attribution, uses an independent
+  neutral icon, and disclaims affiliation or endorsement. Install, live
+  publish/subscribe, OS-daemon publishing, retained-message recovery, pinned
+  update, clean uninstall, reinstall and persistent-data recovery passed on the
+  amd64 .235 test node. Direct LAN access to port 1883 was refused.

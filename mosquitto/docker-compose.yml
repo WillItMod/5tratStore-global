@@ -1,0 +1,26 @@
+services:
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - install -d -o 1883 -g 1883 /mosquitto/data && chown -R 1883:1883 /mosquitto/data
+    volumes:
+      - ${APP_DATA_DIR}/data/storage:/mosquitto/data
+    security_opt:
+      - no-new-privileges:true
+  app:
+    image: eclipse-mosquitto:2.1.2-alpine@sha256:6f8d8a947c506f8a2290ec65cd4bd2bc7cb4d43fb5f6271f861cb013e2ef9797
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:1883:1883
+    volumes:
+      - ${APP_DATA_DIR}/data/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ${APP_DATA_DIR}/data/storage:/mosquitto/data
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
