@@ -4,9 +4,12 @@ An app is eligible only when all of the following are true:
 
 1. The package is created from the original upstream project, not copied from
    another app store.
-2. The upstream software licence permits the proposed direct user installation
-   and use. Where a third-party hosted service is involved, its own terms and
-   jurisdiction restrictions are also reviewed and disclosed.
+2. The catalogue identifies the upstream software licence and gives users a
+   direct path to the original publisher's artifact. A recipe-only listing does
+   not convey the application source or binary, so copyleft licences (including
+   GPL and AGPL) are not by themselves a reason to reject an app. Where a
+   third-party hosted service is involved, its own terms and jurisdiction
+   restrictions are reviewed and disclosed.
 3. 5tratStore GLOBAL is **recipe-only**. It never hosts, mirrors, vendors,
    repackages, rebuilds, or serves third-party application source, images,
    binaries, archives, or build outputs. Each user node pulls a pinned runtime
@@ -17,7 +20,10 @@ An app is eligible only when all of the following are true:
 5. Listing text and screenshots are original or supplied with explicit reuse
    permission.
 6. Icon and other artwork rights are documented.
-7. Required copyright, licence, source, and attribution notices are included.
+7. The listing includes the upstream licence, version, source and attribution
+   information needed to identify what the user elects to install. 5tratStore
+   does not claim upstream work as its own or create a substitute source offer
+   because it does not distribute the upstream work.
 8. The app has been installed, started, updated, backed up where applicable,
    and uninstalled on every declared architecture and OS version.
 9. Network access, host mounts, device access, privileged mode, secrets, and
