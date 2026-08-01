@@ -1,0 +1,17 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 13133
+  app:
+    image: otel/opentelemetry-collector-contrib:0.157.0@sha256:f2f01157055a9b2aab9df7118e1f1c9abf345e99b23bc7a2bc791db374a7d0f6
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:33035:13133
+      - 127.0.0.1:33036:4317
+      - 127.0.0.1:33037:4318
+    volumes:
+      - ${APP_DATA_DIR}/data/config.yaml:/etc/otelcol-contrib/config.yaml:ro
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

@@ -36,6 +36,8 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Mailpit | Local SMTP and email testing tool | Current 1.30.6 release | MIT | **Approved:** 1.30.6 local-only upstream test inbox lifecycle-tested on amd64; use to validate alert integrations before real delivery |
 | Beszel Hub | Lightweight system monitoring hub | Current 0.18.7 release | MIT | **Approved:** 0.18.7 official Hub recipe lifecycle-tested on amd64; monitor only systems manually enrolled by the administrator |
 | VictoriaLogs | High-performance log database | Current 1.52.0 release | Apache-2.0 | **Approved:** 1.52.0 single-node upstream VMUI recipe lifecycle-tested on amd64; logs are supplied only by administrator-configured shippers |
+| NATS | Lightweight message broker with JetStream | Current 2.14.4 release | Apache-2.0 | **Approved:** 2.14.4 persistent local event bus lifecycle-tested on amd64; client access remains loopback-only |
+| OpenTelemetry Collector | Vendor-neutral telemetry collection service | Current 0.157.0 release | Apache-2.0 | **Approved:** 0.157.0 loopback-only upstream collector lifecycle-tested on amd64; exporters and telemetry sources remain administrator-configured |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

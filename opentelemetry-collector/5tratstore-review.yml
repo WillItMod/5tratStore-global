@@ -1,0 +1,21 @@
+schemaVersion: 1
+status: approved
+appId: opentelemetry-collector
+appVersion: 0.157.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/open-telemetry/opentelemetry-collector-releases
+  license: Apache-2.0
+  licenseEvidence: https://github.com/open-telemetry/opentelemetry-collector-releases/blob/v0.157.0/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Original upstream image and official artwork, direct user-node pull and no
+  store payload mirror. The supplied recipe has only loopback OTLP receivers,
+  a health endpoint, and a debug exporter; it does not collect host logs,
+  metrics, Docker state or device data. No host mounts, Docker socket, device
+  access, privileged mode or host networking. Lifecycle-tested then disabled
+  on the isolated amd64 CT.

@@ -1,0 +1,19 @@
+id: nats
+name: NATS
+tagline: Lightweight messaging system with JetStream persistence
+description: >-
+  NATS is a lightweight messaging system for building event-driven services.
+  This recipe enables the original server with JetStream persistence and exposes
+  its monitoring endpoint through 5tratumOS. NATS client access is loopback-only
+  and unauthenticated by design, so use it only for services you run on this
+  node; it is not a public message broker.
+version: 2.14.4
+category: Automation
+developer: NATS Authors
+website: https://nats.io/
+repo: https://github.com/nats-io/nats-server
+support: https://github.com/nats-io/nats-server/discussions
+icon: https://raw.githubusercontent.com/nats-io/nats-server/v2.14.4/logos/nats-server.png
+port: 33034
+path: /varz
+uiMode: proxy
