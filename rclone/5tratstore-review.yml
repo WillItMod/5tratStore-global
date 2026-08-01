@@ -1,0 +1,20 @@
+schemaVersion: 1
+status: approved
+appId: rclone
+appVersion: 1.75.0
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/rclone/rclone
+  license: MIT
+  licenseEvidence: https://github.com/rclone/rclone/blob/v1.75.0/COPYING
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Original upstream image and artwork, direct user-node pull, and no store
+  payload mirror. The loopback-only web interface uses application-generated
+  authentication from the local app environment. It starts with no configured
+  remotes, uses no host mounts, Docker socket, devices, privileged mode or host
+  networking, and was lifecycle-tested then disabled on the isolated amd64 CT.

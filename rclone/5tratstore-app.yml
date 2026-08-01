@@ -1,0 +1,19 @@
+id: rclone
+name: rclone
+tagline: Remote storage and backup transfer tool
+description: >-
+  rclone is a command-line program for managing files on cloud and other
+  remote storage systems. This recipe exposes rclone's original Remote Control
+  web interface over the local 5tratumOS proxy. It starts with no remote
+  configured: add only storage accounts and destinations you control, and
+  protect and test any backup policy before relying on it for node data.
+version: 1.75.0
+category: Backup and storage
+developer: rclone contributors
+website: https://rclone.org/
+repo: https://github.com/rclone/rclone
+support: https://forum.rclone.org/
+icon: https://raw.githubusercontent.com/rclone/rclone/v1.75.0/graphics/logo/svg/logo_symbol_color.svg
+port: 33025
+path: /
+uiMode: proxy

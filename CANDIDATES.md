@@ -29,6 +29,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | Grafana Loki | Log aggregation service | Current 3.7.4 release | AGPL-3.0 | **Approved:** 3.7.4 single-node recipe lifecycle-tested on amd64; pair with a compatible log collector and Grafana |
 | Prometheus Pushgateway | Push-based metrics gateway for short-lived jobs | Current 1.11.3 release | Apache-2.0 | **Approved:** 1.11.3 persistent local recipe lifecycle-tested on amd64; use with Prometheus scraping |
 | Syncthing | Private node-backup and file synchronisation | Current 2.1.2 release | MPL-2.0 | **Approved:** 2.1.2 loopback UI recipe lifecycle-tested on amd64; pairing and folder sharing are administrator initiated |
+| rclone | Remote-storage and backup transfer tool | Current 1.75.0 release | MIT | **Approved:** 1.75.0 authenticated upstream web interface lifecycle-tested on amd64; remote credentials and destinations remain administrator-configured |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |
