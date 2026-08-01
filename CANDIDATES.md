@@ -32,7 +32,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | BTC RPC Explorer | Bitcoin node explorer | 1,791 | MIT | Research; likely early candidate |
 | electrs | Electrum server | 1,382 | MIT | Research; node dependency and disk load |
 | Esplora | Bitcoin explorer | 1,254 | MIT | Research; indexer dependency |
-| LNbits | Lightning accounts and tools | 1,224 | MIT | Proxmox safe-default lifecycle passed; real Lightning/backup/arm64 tests and Sol/high review pending |
+| LNbits | Lightning accounts and tools | 1,224 | MIT | **Approved:** 1.5.6 safe-default VoidWallet recipe lifecycle-tested on amd64; real backend/backup/arm64 follow-up tracked |
 | RTL | Lightning node UI | 796 | MIT | Research; requires supported Lightning backend |
 | Miningcore | Mining pool server | 790 | MIT | Hold: upstream repository is archived |
 | ElectrumX | Electrum server | 567 | MIT | Research; storage/performance validation |

@@ -1,0 +1,67 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 5000
+  init:
+    image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+    restart: "no"
+    user: "0:0"
+    command:
+      - sh
+      - -c
+      - >-
+        install -d -m 700 -o 1000 -g 1000 /data /data/extensions /data/logs &&
+        chown -R 1000:1000 /data &&
+        chmod 700 /data /data/extensions /data/logs &&
+        find /data -maxdepth 1 -type f -exec chmod 600 {} \; &&
+        find /data/logs -maxdepth 1 -type f -exec chmod 600 {} \;
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    security_opt:
+      - no-new-privileges:true
+  app:
+    image: lnbits/lnbits:v1.5.6@sha256:6e37fbf9b847c066d7e022e19a018b3df7f12602a370f117857165d36bfb165b
+    restart: unless-stopped
+    user: "1000:1000"
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - >-
+        umask 077;
+        exec /app/.venv/bin/lnbits --port 5000 --host 0.0.0.0
+        --forwarded-allow-ips='*'
+    ports:
+      - 127.0.0.1:33017:5000
+    environment:
+      LNBITS_HOST: 0.0.0.0
+      LNBITS_PORT: "5000"
+      LNBITS_DATA_FOLDER: /app/data
+      LNBITS_EXTENSIONS_PATH: /app/data/extensions
+      LNBITS_ADMIN_UI: "true"
+      LNBITS_BACKEND_WALLET_CLASS: VoidWallet
+      AUTH_HTTPS_ONLY: "false"
+      AUTH_SECRET_KEY: ${APP_PASSWORD}
+      DEBUG: "false"
+      LNBITS_SITE_TITLE: LNbits on 5tratumOS
+      LNBITS_SITE_TAGLINE: Self-hosted Lightning tools
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 8
+      start_period: 45s

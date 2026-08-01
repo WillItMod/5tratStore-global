@@ -1,0 +1,48 @@
+schemaVersion: 1
+status: approved
+appId: lnbits
+appVersion: 1.5.6
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/lnbits/lnbits
+  license: MIT
+  licenseEvidence: https://github.com/lnbits/lnbits/blob/v1.5.6/LICENSE
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - v0.7.4-test-hashwatcher
+  architectures:
+    - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: >-
+  Lifecycle-tested on the Proxmox 5tratumOS amd64 system. Install, start, pinned
+  update, restart, uninstall-with-data-retained, reinstall, health, loopback
+  binding, proxy login redirect and clean shutdown passed. The database and
+  superuser hashes remained unchanged across update and reinstall. Managed
+  state was tightened to mode 0700 directories and 0600 sensitive files. The
+  app starts with VoidWallet, reported zero balance, and cannot settle real
+  payments until an administrator deliberately configures a funding source.
+  A real Lightning backend, encrypted backup/restore, extension isolation,
+  upgrade migration, arm64 runtime and independent Sol/high review remain
+  tracked follow-up work. The app was disabled after testing.
