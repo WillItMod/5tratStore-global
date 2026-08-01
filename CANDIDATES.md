@@ -14,7 +14,7 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 
 | Candidate | Role | Upstream signal | Licence signal | Initial disposition |
 |---|---|---:|---|---|
-| Gleec Wallet (Komodo DeFi SDK) | Self-custodial multi-chain wallet and atomic-swap DEX | Current Gleec/Komodo product; release 0.9.5 | GPL-3.0; hosted-service terms separate | **Highest priority, legal/security hold:** clarify UK/global service terms and require HTTPS wallet delivery |
+| Gleec Wallet (Komodo DeFi SDK) | Self-custodial multi-chain wallet and atomic-swap DEX | Current Gleec/Komodo product; release 0.9.5 | GPL-3.0; hosted-service terms separate | **Highest priority, delivery/security hold:** GPL is compatible with a recipe-only listing; require an official direct runtime artifact and HTTPS wallet delivery |
 | Tailscale | Private remote access to miners and node services | Current release 1.98.10 | BSD-3-Clause; hosted-service terms separate | Proxmox lifecycle passed; real tailnet/arm64 tests and Sol/high review pending |
 | Uptime Kuma | Pool/node uptime monitoring | 89,693 stars | MIT | **Approved:** 2.4.0 recipe tested on amd64 |
 | Netdata | Host and container monitoring | 79,968 | GPL-3.0 | Research; resource/security review needed |
@@ -49,7 +49,7 @@ should be prioritised even though their public adoption signals are smaller.
 |---|---|---:|---|---|
 | DATUM Gateway | Decentralised Bitcoin mining gateway | 146 stars; release 0.4.1beta | MIT licence file present; trademark excluded | Priority research; independent image build and amd64 miner/node interoperability required |
 | Stratum V2 SRI | Stratum V2 protocol and mining infrastructure | 350 | Dual MIT/Apache-2.0 licence files present | Priority research; package only stable upstream components |
-| ckpool | Bitcoin mining pool server | 24 | GPL-3.0 | Priority research; source-offer and recipe obligations required |
+| ckpool | Bitcoin mining pool server | 24 | GPL-3.0 | Priority research; find an official direct runtime artifact and test pool safety |
 | Public Pool | Solo mining pool UI/service | 17 | No repository licence found | Hold: obtain explicit upstream permission or a licence grant |
 | HashWatcher Remote Monitoring Setup | Guided remote miner monitoring setup | Direct project-developer permission recorded 2026-08-01 | Proprietary; permission documented beside recipe | **Approved:** 1.3.0 recipe lifecycle-tested on amd64; real tailnet/miner, arm64 and Sol/high follow-up pending |
 

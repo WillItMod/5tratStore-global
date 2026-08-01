@@ -21,28 +21,6 @@ services:
     environment:
       APP_HOST: app
       APP_PORT: 8787
-  init:
-    image: hashwatcher/hashwatcher-gateway:1.3.0@sha256:13af6f24a4e73b84ed173df90fd1489257316fbc433381f69dd9ed262645c9ef
-    restart: "no"
-    entrypoint:
-      - /bin/sh
-      - -c
-    command:
-      - |-
-        set -eu
-        temporary=/data/5tratstore-hub-agent.py.tmp
-        target=/data/5tratstore-hub-agent.py
-        cp /app/hub_agent.py "$${temporary}"
-        sed -i 's/self.config_lock = threading.Lock()/self.config_lock = threading.RLock()/' "$${temporary}"
-        sed -i '/server = ThreadingHTTPServer/a\        server.daemon_threads = True' "$${temporary}"
-        grep -q 'self.config_lock = threading.RLock()' "$${temporary}"
-        grep -q 'server.daemon_threads = True' "$${temporary}"
-        chmod 0444 "$${temporary}"
-        mv -f "$${temporary}" "$${target}"
-    volumes:
-      - ${APP_DATA_DIR}/data:/data
-    security_opt:
-      - no-new-privileges:true
   app:
     image: hashwatcher/hashwatcher-gateway:1.3.0@sha256:13af6f24a4e73b84ed173df90fd1489257316fbc433381f69dd9ed262645c9ef
     restart: unless-stopped
@@ -52,7 +30,6 @@ services:
       - 127.0.0.1:33014:8787
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - ${APP_DATA_DIR}/data/5tratstore-hub-agent.py:/app/hub_agent.py:ro
       - /proc/1/net:/host_proc_net:ro
     environment:
       PI_HOSTNAME: HashWatcherGateway
@@ -69,6 +46,3 @@ services:
       LAST_WIFI_PATH: /data/last_wifi_credentials.json
     security_opt:
       - no-new-privileges:true
-    depends_on:
-      init:
-        condition: service_completed_successfully

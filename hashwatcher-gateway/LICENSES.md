@@ -15,7 +15,6 @@
   repository's MIT licence. It does not use HashWatcher or Engineered
   Essentials artwork.
 
-The listing text and recipe are original. The recipe pulls the exact upstream
-image directly to the user's node and makes a local, runtime-only compatibility
-copy of the gateway helper. 5tratStore does not host, mirror or redistribute
-the upstream image or a modified image.
+The listing text and recipe are original. The recipe pulls and runs the exact,
+unmodified upstream image directly on the user's node. 5tratStore does not
+host, mirror, alter or redistribute upstream application code or images.
