@@ -1,0 +1,19 @@
+id: searxng
+name: SearXNG
+tagline: Privacy-respecting metasearch engine
+description: >-
+  SearXNG is a self-hosted metasearch engine. This recipe runs the original
+  upstream container and stores its configuration and cache in managed app
+  storage. Search queries are sent to the search providers enabled in SearXNG;
+  self-hosting improves control, but is not anonymity. Review the provider list
+  and privacy settings before using it with sensitive searches.
+version: 2026.8.1-8892414dc
+category: Privacy
+developer: SearXNG contributors
+website: https://searxng.org/
+repo: https://github.com/searxng/searxng
+support: https://github.com/searxng/searxng/issues
+icon: https://raw.githubusercontent.com/searxng/searxng/master/searx/static/themes/simple/img/favicon.svg
+port: 33038
+path: /
+uiMode: proxy

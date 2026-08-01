@@ -38,6 +38,11 @@ Snapshot: 2026-08-01. Every URL below is an original upstream repository.
 | VictoriaLogs | High-performance log database | Current 1.52.0 release | Apache-2.0 | **Approved:** 1.52.0 single-node upstream VMUI recipe lifecycle-tested on amd64; logs are supplied only by administrator-configured shippers |
 | NATS | Lightweight message broker with JetStream | Current 2.14.4 release | Apache-2.0 | **Approved:** 2.14.4 persistent local event bus lifecycle-tested on amd64; client access remains loopback-only |
 | OpenTelemetry Collector | Vendor-neutral telemetry collection service | Current 0.157.0 release | Apache-2.0 | **Approved:** 0.157.0 loopback-only upstream collector lifecycle-tested on amd64; exporters and telemetry sources remain administrator-configured |
+| SearXNG | Privacy-respecting metasearch | Current container tag `2026.8.1-8892414dc` | AGPL-3.0 | **Approved:** direct upstream recipe lifecycle-tested on amd64; enabled search providers receive the user's queries |
+| PrivateBin | Client-side encrypted paste sharing | Current 2.0.5 release | Zlib/libpng | **Approved:** direct upstream recipe lifecycle-tested on amd64; HTTPS and strong paste passwords remain necessary for confidential use |
+| linkding | Self-hosted bookmark manager | Current 1.45.0 release | MIT | **Approved:** direct upstream recipe lifecycle-tested on amd64; initial local administrator uses the app password |
+| Actual Budget | Local-first personal finance software | Current 26.7.0 release | MIT | **Approved:** direct upstream recipe lifecycle-tested on amd64; not a wallet or custody product |
+| SeaweedFS | Single-node S3-compatible storage | Current 4.40 release | Apache-2.0 | **Approved:** direct upstream recipe lifecycle-tested on amd64; S3 access is loopback-only and must be backed up separately |
 | Electrum | Bitcoin wallet | 8,536 | MIT | Research; wallet/security review required |
 | LND | Lightning node | 8,171 | MIT | Research; high state-loss risk |
 | BTCPay Server | Bitcoin payment server | 7,679 | MIT | Research; complex multi-service package |

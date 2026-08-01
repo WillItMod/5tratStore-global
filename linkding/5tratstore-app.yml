@@ -1,0 +1,21 @@
+id: linkding
+name: linkding
+tagline: Self-hosted bookmark manager
+description: >-
+  linkding is the original upstream self-hosted bookmark manager. This recipe
+  runs its SQLite-backed default configuration and seeds a local administrator
+  account named 5tratum with the app password chosen at install. It stores
+  bookmarks, notes and metadata in managed app storage. Change the account
+  details after first sign-in and export your bookmarks before major changes.
+version: 1.45.0
+category: Productivity
+developer: linkding contributors
+website: https://linkding.link/
+repo: https://github.com/sissbruecker/linkding
+support: https://github.com/sissbruecker/linkding/issues
+icon: https://raw.githubusercontent.com/sissbruecker/linkding/v1.45.0/assets/logo.svg
+gallery:
+  - https://raw.githubusercontent.com/sissbruecker/linkding/v1.45.0/bookmarks/static/linkding-screenshot.png
+port: 33040
+path: /
+uiMode: proxy

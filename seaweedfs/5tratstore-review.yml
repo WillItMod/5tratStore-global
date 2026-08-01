@@ -1,0 +1,24 @@
+schemaVersion: 1
+status: approved
+appId: seaweedfs
+appVersion: 4.40
+reviewedAt: "2026-08-01"
+reviewedBy: WillItMod / 5tratStore review
+upstream:
+  sourceUrl: https://github.com/seaweedfs/seaweedfs
+  license: Apache-2.0
+  licenseEvidence: https://github.com/seaweedfs/seaweedfs/blob/4.40/LICENSE
+delivery: {mode: direct-upstream-artifact, storePayload: recipe-only, mirrorsThirdPartyPayload: false}
+rights: {packageOriginal: true, softwareDistributionCleared: true, containerUseCleared: true, listingTextCleared: true, artworkCleared: true, noticesIncluded: true}
+compatibility: {osVersions: [v0.7.4-test-manual-global-install], architectures: [amd64], installTested: true, startTested: true, updateTested: true, uninstallTested: true}
+security: {privileged: false, hostNetwork: false, dockerSocket: false, hostMountsReviewed: true, devicesReviewed: true, networkEndpointsReviewed: true}
+notes: >-
+  Official SeaweedFS image from the project maintainer's documented Docker Hub
+  repository, pinned to an immutable digest. The upstream mini command creates
+  a single-node S3 endpoint with explicit credentials and a pre-created local
+  bucket. The S3 endpoint is loopback-bound; only the master console is passed
+  to the authenticated 5tratumOS proxy. No host mounts, device access, Docker
+  socket, privileged mode or host networking are used. The upstream entrypoint
+  needs its normal bootstrap-to-service-user privilege drop, so capabilities
+  are not forcibly removed and no extra capabilities are added. The upstream
+  favicon is linked directly.

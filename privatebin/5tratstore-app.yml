@@ -1,0 +1,19 @@
+id: privatebin
+name: PrivateBin
+tagline: Zero-knowledge encrypted paste sharing
+description: >-
+  PrivateBin is a minimalist paste service that encrypts and decrypts paste
+  contents in the browser. This recipe runs the original upstream image and
+  keeps encrypted paste storage in managed app data. Use the authenticated
+  5tratumOS app address over HTTPS, set a strong paste password when sharing
+  sensitive material, and treat a compromised server or browser as untrusted.
+version: 2.0.5
+category: Privacy
+developer: PrivateBin contributors
+website: https://privatebin.info/
+repo: https://github.com/PrivateBin/PrivateBin
+support: https://github.com/PrivateBin/PrivateBin/issues
+icon: https://raw.githubusercontent.com/PrivateBin/assets/master/images/preview/logoSmall.png
+port: 33039
+path: /
+uiMode: proxy
