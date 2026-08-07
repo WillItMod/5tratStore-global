@@ -1,0 +1,23 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: app
+      APP_PORT: 13701
+  app:
+    image: ghcr.io/465media/bitaxe-baller:1.21.0@sha256:387f7e8c5b5daa53faca9538cc9147b5368f7baf1f661587b60560262e099e5e
+    restart: unless-stopped
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      HOST: 0.0.0.0
+      PORT: 13701
+      BITAXE_BALLER_DATA_DIR: /data
+      # Bridge networking can't carry multicast, so mDNS is disabled here.
+      MDNS_ENABLED: "0"
+      BITAXE_BALLER_NO_AUTO_OPEN: "1"
+      # Set to your LAN /24 to enable the built-in network scanner from a
+      # bridged container (e.g. "192.168.1.0/24"). You can always add miners by
+      # IP without this.
+      BBR_SCAN_SUBNET: "192.168.1.0/24"
+    security_opt:
+      - no-new-privileges:true
