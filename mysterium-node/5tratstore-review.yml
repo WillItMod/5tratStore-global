@@ -1,0 +1,55 @@
+schemaVersion: 1
+status: proposed
+appId: mysterium-node
+appVersion: 1.38.5
+reviewedAt: ""
+reviewedBy: ""
+
+upstream:
+  sourceUrl: https://github.com/mysteriumnetwork/node
+  license: GPL-3.0
+  licenseEvidence: https://github.com/mysteriumnetwork/node/blob/master/LICENSE
+
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: false
+  containerUseCleared: false
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+
+compatibility:
+  osVersions:
+    - pending-maintainer-test
+  architectures:
+    - amd64
+  installTested: false
+  startTested: false
+  updateTested: false
+  uninstallTested: false
+
+security:
+  privileged: false
+  hostNetwork: true
+  dockerSocket: false
+  hostMountsReviewed: false
+  devicesReviewed: false
+  networkEndpointsReviewed: false
+
+notes: >-
+  Original 5tratStore recipe prepared directly from the upstream Mysterium Node
+  project and official Mysterium Docker image. Upstream Docker documentation
+  requires host networking so the provider can detect and publish the correct
+  service IP and requires NET_ADMIN for network operation. The provider is
+  launched with Mysterium's --agreed-terms-and-conditions flag. Persistent state
+  is limited to ${APP_DATA_DIR}/data/mysterium. A pinned official nginx helper
+  proxies the upstream local Node UI from host port 4449 into the 5tratumOS app
+  proxy. The catalogue icon is original trademark-neutral artwork and contains
+  no Mysterium, Kraskus, or 5tratumOS marks. Legal/provenance clearance,
+  endpoint review, lifecycle testing, and final approval remain for the
+  5tratStore maintainers.
