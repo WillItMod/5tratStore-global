@@ -1,13 +1,13 @@
 schemaVersion: 1
 status: approved
 appId: tailscale
-appVersion: 1.98.10
-reviewedAt: "2026-08-01"
-reviewedBy: WillItMod / 5tratStore review
+appVersion: 1.102.5
+reviewedAt: '2026-09-30'
+reviewedBy: WillItMod / Codex compatibility review
 upstream:
   sourceUrl: https://github.com/tailscale/tailscale
   license: BSD-3-Clause
-  licenseEvidence: https://github.com/tailscale/tailscale/blob/v1.98.10/LICENSE
+  licenseEvidence: https://github.com/tailscale/tailscale/blob/v1.102.5/LICENSE
 delivery:
   mode: direct-upstream-artifact
   storePayload: recipe-only
@@ -21,29 +21,29 @@ rights:
   noticesIncluded: true
 compatibility:
   osVersions:
-    - v0.7.4-test-hashwatcher
+  - v0.8.19
   architectures:
-    - amd64
+  - amd64
   installTested: true
   startTested: true
   updateTested: true
   uninstallTested: true
 security:
   privileged: false
-  hostNetwork: false
+  hostNetwork: true
   dockerSocket: false
   hostMountsReviewed: true
   devicesReviewed: true
   networkEndpointsReviewed: true
-notes: >-
-  Lifecycle-tested on the Proxmox 5tratumOS amd64 test system. Install, start, update,
-  uninstall-with-data-retained, reinstall, restart, state persistence and clean
-  shutdown passed. The management UI returned HTTP 200 locally, direct LAN
-  access was refused, the unauthenticated OS route redirected to login, and port
-  33016 closed after disable. The persistent identity-state SHA-256 remained
-  3b7ff5892070c77e026df45b8fce43946cae4fbac2eb78c07e5dc4da1df93ea3
-  across the lifecycle. Userspace mode deliberately avoids privileged mode,
-  NET_ADMIN, host networking and /dev/net/tun. A user must authenticate their
-  own Tailscale account before it can join a tailnet. Arm64 runtime verification
-  and independent Sol/high review remain tracked follow-up work. The app was
-  disabled after verification.
+notes: 'Verified on the amd64 5tratumOS 0.8.19 node. The logged-in node was reachable through its Tailscale
+  IP: the OS returned its authenticated login route and MUX returned HTTP 200. The user independently
+  confirmed remote access. Container removal/recreation and daemon restart retained the node identity
+  and IP without reauthentication. Persistent state was backed up. Initializer tests verified fresh setup,
+  legacy identity copying, source retention and no overwrite of a current identity. The daemon now uses
+  host networking, NET_ADMIN, NET_RAW and /dev/net/tun to provide node access. The setup service remains
+  loopback-only behind OS authentication. DNS acceptance, route acceptance, Tailscale SSH and advertised
+  subnet routes remain off by default. TS_AUTH_ONCE preserves login; TS_BOOT_TIMEOUT allows 24 hours for
+  first-time browser authentication instead of restarting every minute. The official PNG favicon is included
+  unchanged as a local identification asset so Orbit texture loading stays within the OS same-origin connection
+  policy. The same local asset serves store and desktop views. Repeated normal store updates retain the
+  running daemon control socket; init no longer unlinks it. Arm64 runtime support is not claimed.'

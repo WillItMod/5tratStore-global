@@ -1,20 +1,21 @@
 id: tailscale
 name: Tailscale
 tagline: Private, encrypted networking between your devices
-description: >-
-  Tailscale is a mesh VPN service that creates a private encrypted network
-  between the user's devices. This recipe runs the official open-source client
-  in userspace mode. A Tailscale account and acceptance of its service terms
-  are required.
-version: 1.98.10
+description: Tailscale connects your 5tratumOS node to your private encrypted network. Open the app and
+  sign in to your own Tailscale account, then use the node's Tailscale IP to reach the OS and its running
+  applications from another authorised device. This recipe uses host networking and the TUN device for
+  node access. It keeps existing identity data across updates and restarts. The setup page is available
+  through the authenticated OS portal. A Tailscale account and acceptance of its service terms are required.
+  Subnet routing, exit-node use and Tailscale SSH are not enabled automatically.
+version: 1.102.5
 category: Remote access
 developer: Tailscale Inc. and contributors
 website: https://tailscale.com/
 repo: https://github.com/tailscale/tailscale
 support: https://tailscale.com/contact/support
-icon: https://tailscale.com/favicon.svg
+icon: icon.png
 gallery:
-  - screenshots/setup.png
+- screenshots/setup.png
 port: 33016
 path: /
 uiMode: proxy
@@ -25,64 +26,88 @@ services:
       APP_PORT: 5252
   init:
     image: alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
-    restart: "no"
-    user: "0:0"
+    restart: 'no'
+    user: 0:0
     command:
-      - sh
-      - -c
-      - chown -R 0:0 /var/lib/tailscale /var/run/tailscale && rm -f /var/run/tailscale/tailscaled.sock
+    - sh
+    - -ec
+    - |-
+      mkdir -p /data/state /data/run
+      if [ ! -f /data/state/tailscaled.state ] && [ -f /data/tailscale/tailscaled.state ]; then
+        cp -a /data/tailscale/. /data/state/
+      fi
+      chown -R 0:0 /data/state /data/run
+      chmod 700 /data/state /data/run
     volumes:
-      - ${APP_DATA_DIR}/data/state:/var/lib/tailscale
-      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    - ${APP_DATA_DIR}/data:/data
     security_opt:
-      - no-new-privileges:true
+    - no-new-privileges:true
   daemon:
-    image: tailscale/tailscale:v1.98.10@sha256:cdf5612ded5be1344f1a704b8c5e53496db97376bb533e5e15f141e48bf60cc0
+    image: tailscale/tailscale:v1.102.5@sha256:c507f3a2a6ab1cabd8d809b98edeb41edbd5c3fb6ad9632ffd098b4c7d0b4065
     restart: unless-stopped
     environment:
       TS_STATE_DIR: /var/lib/tailscale
       TS_SOCKET: /var/run/tailscale/tailscaled.sock
-      TS_USERSPACE: "true"
-      TS_ACCEPT_DNS: "false"
+      TS_USERSPACE: 'false'
+      TS_ACCEPT_DNS: 'false'
       TS_HOSTNAME: 5tratumOS
+      TS_AUTH_ONCE: 'true'
+      TS_BOOT_TIMEOUT: 24h
     volumes:
-      - ${APP_DATA_DIR}/data/state:/var/lib/tailscale
-      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    - ${APP_DATA_DIR}/data/state:/var/lib/tailscale
+    - ${APP_DATA_DIR}/data/run:/var/run/tailscale
     cap_drop:
-      - ALL
+    - ALL
     security_opt:
-      - no-new-privileges:true
+    - no-new-privileges:true
     depends_on:
       init:
         condition: service_completed_successfully
     healthcheck:
       test:
-        - CMD
-        - test
-        - -S
-        - /var/run/tailscale/tailscaled.sock
+      - CMD-SHELL
+      - tailscale --socket=/var/run/tailscale/tailscaled.sock status --json >/dev/null
       interval: 10s
       timeout: 3s
       retries: 12
       start_period: 10s
+    network_mode: host
+    cap_add:
+    - NET_ADMIN
+    - NET_RAW
+    devices:
+    - /dev/net/tun:/dev/net/tun
+    stop_grace_period: 30s
   web:
-    image: tailscale/tailscale:v1.98.10@sha256:cdf5612ded5be1344f1a704b8c5e53496db97376bb533e5e15f141e48bf60cc0
+    image: tailscale/tailscale:v1.102.5@sha256:c507f3a2a6ab1cabd8d809b98edeb41edbd5c3fb6ad9632ffd098b4c7d0b4065
     restart: unless-stopped
     stop_signal: SIGINT
     entrypoint:
-      - /usr/local/bin/tailscale
+    - /usr/local/bin/tailscale
     command:
-      - --socket=/var/run/tailscale/tailscaled.sock
-      - web
-      - --listen=0.0.0.0:5252
+    - --socket=/var/run/tailscale/tailscaled.sock
+    - web
+    - --listen=0.0.0.0:5252
+    - --prefix=/apps/tailscale
     ports:
-      - 127.0.0.1:33016:5252
+    - 127.0.0.1:33016:5252
     volumes:
-      - ${APP_DATA_DIR}/data/run:/var/run/tailscale
+    - ${APP_DATA_DIR}/data/run:/var/run/tailscale
     cap_drop:
-      - ALL
+    - ALL
     security_opt:
-      - no-new-privileges:true
+    - no-new-privileges:true
     depends_on:
       daemon:
         condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - -q
+      - --spider
+      - http://127.0.0.1:5252/
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 10s
