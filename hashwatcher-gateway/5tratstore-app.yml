@@ -7,7 +7,7 @@ description: >-
   own Tailscale network. It is not the HashWatcher companion app and does not
   include a HashWatcher subscription. The local setup interface is kept behind
   the authenticated 5tratumOS proxy and is not exposed directly to the LAN.
-version: 1.3.0
+version: 1.3.1
 category: Mining
 developer: Engineered Essentials
 website: https://hashwatcher.app/
@@ -23,7 +23,7 @@ services:
       APP_HOST: app
       APP_PORT: 8787
   app:
-    image: hashwatcher/hashwatcher-gateway:1.3.0@sha256:13af6f24a4e73b84ed173df90fd1489257316fbc433381f69dd9ed262645c9ef
+    image: hashwatcher/hashwatcher-gateway:1.3.1@sha256:969cab8e6b61de8411ea1bc7b8d87d9f9c618306e8f5c945deea12e5c870e3ba
     restart: unless-stopped
     stop_grace_period: 10s
     stop_signal: SIGINT
