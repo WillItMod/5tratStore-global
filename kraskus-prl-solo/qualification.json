@@ -1,0 +1,421 @@
+{
+  "app": "kraskus-prl-solo",
+  "version": "0.6.5",
+  "os": "v0.8.53-dev",
+  "architecture": "amd64",
+  "steps": [
+    {
+      "name": "install",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "start",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 45.52
+    },
+    {
+      "name": "browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "node",
+            "node_fetched_at",
+            "node_freshness",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "network_difficulty",
+            "blocks",
+            "block_data_available",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds",
+            "security_mode"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "portal-auth-required",
+      "passed": true,
+      "http": 302
+    },
+    {
+      "name": "stop",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.07
+    },
+    {
+      "name": "backup",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.01
+    },
+    {
+      "name": "restart",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 33.86
+    },
+    {
+      "name": "restart-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "node",
+            "node_fetched_at",
+            "node_freshness",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "network_difficulty",
+            "blocks",
+            "block_data_available",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds",
+            "security_mode"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "same-version-update",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.48
+    },
+    {
+      "name": "update-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "node",
+            "node_fetched_at",
+            "node_freshness",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "network_difficulty",
+            "blocks",
+            "block_data_available",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds",
+            "security_mode"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "state-preserved-after-update",
+      "passed": true
+    },
+    {
+      "name": "stop-before-restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.67
+    },
+    {
+      "name": "restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.01
+    },
+    {
+      "name": "start-restored",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 33.72
+    },
+    {
+      "name": "restored-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "node",
+            "node_fetched_at",
+            "node_freshness",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "network_difficulty",
+            "blocks",
+            "block_data_available",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds",
+            "security_mode"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "restored-state-preserved",
+      "passed": true
+    },
+    {
+      "name": "uninstall-keep-data",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 1.97
+    },
+    {
+      "name": "uninstalled-and-data-retained",
+      "passed": true
+    },
+    {
+      "name": "no-forced-kills",
+      "passed": true,
+      "exits": [
+        {
+          "container": "5tratumos-kraskus-prl-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-gateway-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-pearld-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-gateway-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-pearld-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-gateway-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-prl-solo-pearld-1",
+          "exitCode": "0"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-11-17T18:45:07Z",
+  "containers": [
+    {
+      "name": "/5tratumos-kraskus-prl-solo-ui-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-prl-solo-ui:ui-0.6.5@sha256:69271100ffcab4a32362c2cb716c2c26cf04030dad755e94f599badae9dd93fe",
+      "state": "running",
+      "health": "starting",
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "33068"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-prl-solo-api-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-prl-solo-ui:api-0.6.4@sha256:f622bfa701a9c92f8ea217ff902318c8ea773bc791f14cb7cda84ee32d5a0bf3",
+      "state": "running",
+      "health": "healthy",
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-prl-solo-gateway-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-prl-solo-ui:gateway-0.6.4@sha256:91ac1ee8f286a2423bdff8ad3c5dc398e45dd5a9f2a3ae94d02c28ebd06065e9",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "1902/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "1902"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-prl-solo-pearld-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-prl-solo-ui:node-0.6.2@sha256:97111ac5c612835902e8387a10594b9a95bececf7de6cfe3eed6f00d3b111285",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "44108/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "44108"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-prl-solo-init-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-prl-solo-ui:api-0.6.4@sha256:f622bfa701a9c92f8ea217ff902318c8ea773bc791f14cb7cda84ee32d5a0bf3",
+      "state": "exited",
+      "health": null,
+      "ports": {}
+    }
+  ],
+  "passed": true,
+  "completedAt": "2026-11-17T18:47:12Z",
+  "recipeSha256": "a73cdfc480e25f203848256d081e6e11fe4c4831d3af4787751926cfc00527e4",
+  "authenticatedPortal": {
+    "pageStatus": 200,
+    "stateStatus": 200,
+    "nodePresent": true,
+    "demo": false,
+    "miningEnabled": false,
+    "hasPayout": false,
+    "assets": [
+      {
+        "path": "/apps/kraskus-prl-solo/foundation-v3.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-prl-solo/app.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-prl-solo/app.js",
+        "status": 200
+      }
+    ],
+    "passed": true
+  },
+  "scope": {
+    "update": "same-version recreate through the actual 5tratumOS update command",
+    "backupRestore": "Stopped disposable application data, restored before restart",
+    "legacyPreservation": "Synthetic recovery sentinel only; no real legacy wallet or funds",
+    "fullChainSync": false,
+    "physicalMiner": false,
+    "miningActivated": false,
+    "rewardSettlement": false
+  }
+}

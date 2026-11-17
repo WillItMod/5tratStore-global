@@ -1,0 +1,30 @@
+id: kraskus-zec-solo
+name: Zcash by Kraskus
+tagline: Zcash node and Equihash solo mining
+description: Run Zebra 7.0.0 with a Zcash mining dashboard. Connect Equihash (200,9) miners on TCP
+  3335. New installations stay paused until you confirm a transparent P2PKH reward address, synchronize
+  the node and explicitly start mining. The fixed 1% developer fee applies to the miner-controlled
+  reward; required network allocations are preserved. Mainnet requires substantial free storage and
+  the publisher's storage check remains active. Requires an x86-64 (amd64) host; ARM is not supported
+  by this release. Initial chain synchronization uses disk, memory and bandwidth. Kraskus Pool forwarding
+  is not available in these submitted releases. Existing wallet and recovery data must be backed
+  up and preserved when switching from a native-wallet version; this app does not expose native-wallet
+  controls or automatically sweep funds.
+version: 0.6.4
+category: Mining
+developer: Kraskus Crypto / 4KM Ventures LLC
+website: https://kraskuscrypto.com/
+repo: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources
+support: https://kraskuscrypto.com/
+port: 33062
+path: /
+uiMode: proxy
+icon: icon.svg
+architectures:
+- amd64
+dependencies: []
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ui
+      APP_PORT: 8080

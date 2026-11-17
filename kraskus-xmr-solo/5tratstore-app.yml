@@ -1,0 +1,28 @@
+id: kraskus-xmr-solo
+name: Monero by Kraskus
+tagline: Monero node and RandomX solo mining
+description: Run a Monero node and connect RandomX miners on TCP 1921. Rewards go to your external
+  primary address or subaddress, with a fixed 1% developer allocation. No seed or private key is
+  requested. The node makes outbound peer connections; its standard inbound peer port is not published.
+  Requires an x86-64 (amd64) host; ARM is not supported by this release. Initial chain synchronization
+  uses disk, memory and bandwidth. Kraskus Pool forwarding is not available in these submitted releases.
+  Existing wallet and recovery data must be backed up and preserved when switching from a native-wallet
+  version; this app does not expose native-wallet controls or automatically sweep funds.
+version: 0.3.7
+category: Mining
+developer: Kraskus Crypto / 4KM Ventures LLC
+website: https://kraskuscrypto.com/
+repo: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources
+support: https://kraskuscrypto.com/
+port: 33065
+path: /
+uiMode: proxy
+icon: icon.svg
+architectures:
+- amd64
+dependencies: []
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ui
+      APP_PORT: 8080
