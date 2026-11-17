@@ -1,0 +1,46 @@
+schemaVersion: 1
+status: proposed
+appId: bitaxe-baller
+appVersion: 1.21.0
+reviewedAt: ""
+reviewedBy: ""
+upstream:
+  sourceUrl: https://github.com/465media/bitaxe-baller
+  license: MIT
+  licenseEvidence: https://github.com/465media/bitaxe-baller/blob/main/LICENSE
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+    - pending-maintainer-test
+  architectures:
+    - amd64
+    - arm64
+  installTested: false
+  startTested: false
+  updateTested: false
+  uninstallTested: false
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: false
+  devicesReviewed: false
+  networkEndpointsReviewed: false
+notes: >-
+  Submitted by the app's own author (465 Media / Nathan Baldwin); MIT licensed.
+  Bridge networking only — no privileged mode, host network, Docker socket, host
+  mounts, or devices. Persists to a single named volume (/data). Outbound
+  connections: the app polls user-provided miner IPs on the local network, makes
+  an hourly update check to bitaxeballer.com, and (only if the user enables the
+  optional Pro remote-access toggle, off by default) opens an outbound WebSocket
+  to relay.bitaxeballer.com. The app adds no inbound authentication of its own —
+  the 5tratumOS app-proxy gates the tile. Set BBR_SCAN_SUBNET to the LAN /24 to
+  enable the network scanner under bridge networking; miners can also be added
+  by IP. Rights/security fields reflect the author's disclosure; maintainer
+  lifecycle tests are intentionally left unset for review.

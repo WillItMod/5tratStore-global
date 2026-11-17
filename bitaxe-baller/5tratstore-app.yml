@@ -1,0 +1,22 @@
+id: bitaxe-baller
+name: Bitaxe Baller
+tagline: Local dashboard and tuner for Bitaxe and AxeOS Bitcoin miners
+description: >-
+  Bitaxe Baller is a local-network dashboard and tuner for Bitaxe (BM1370) and
+  other AxeOS-based Bitcoin miners. It also monitors NerdQAxe boards and Braiins
+  OS mini-miners (monitor-only). It polls each miner every few seconds for
+  hashrate, temperatures, shares and best-share difficulty, charts them over
+  time, offers frequency and voltage tuning with server-enforced safety bounds,
+  estimates running cost, and writes per-device CSV logs. On this platform it
+  runs with bridge networking: add miners by IP, or set BBR_SCAN_SUBNET to your
+  LAN to use the built-in network scanner. The app adds no telemetry beyond a
+  once-per-hour update check; optional Pro remote access is off by default.
+version: 1.21.0
+category: Mining infrastructure
+developer: 465 Media / Nathan Baldwin
+website: https://bitaxeballer.com
+repo: https://github.com/465media/bitaxe-baller
+support: https://bitaxeballer.com/support.html
+icon: https://bitaxeballer.com/img/icon-dark.svg
+port: 33042
+path: /
