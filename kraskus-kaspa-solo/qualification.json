@@ -1,0 +1,459 @@
+{
+  "app": "kraskus-kaspa-solo",
+  "version": "0.5.5",
+  "os": "v0.8.53-dev",
+  "architecture": "amd64",
+  "steps": [
+    {
+      "name": "install",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "start",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 12.31
+    },
+    {
+      "name": "browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "security_mode",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "best_shares",
+            "network_difficulty",
+            "round_target_difficulty",
+            "blocks",
+            "difficulty_settings",
+            "pruning",
+            "stratum_port"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "portal-auth-required",
+      "passed": true,
+      "http": 302
+    },
+    {
+      "name": "stop",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 5.93
+    },
+    {
+      "name": "backup",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.01
+    },
+    {
+      "name": "restart",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.32
+    },
+    {
+      "name": "restart-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "security_mode",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "best_shares",
+            "network_difficulty",
+            "round_target_difficulty",
+            "blocks",
+            "difficulty_settings",
+            "pruning",
+            "stratum_port"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "same-version-update",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.63
+    },
+    {
+      "name": "update-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "security_mode",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "best_shares",
+            "network_difficulty",
+            "round_target_difficulty",
+            "blocks",
+            "difficulty_settings",
+            "pruning",
+            "stratum_port"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "state-preserved-after-update",
+      "passed": true
+    },
+    {
+      "name": "stop-before-restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.79
+    },
+    {
+      "name": "restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.01
+    },
+    {
+      "name": "start-restored",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.18
+    },
+    {
+      "name": "restored-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "demo",
+            "security_mode",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "best_shares",
+            "network_difficulty",
+            "round_target_difficulty",
+            "blocks",
+            "difficulty_settings",
+            "pruning",
+            "stratum_port"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "restored-state-preserved",
+      "passed": true
+    },
+    {
+      "name": "uninstall-keep-data",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.07
+    },
+    {
+      "name": "uninstalled-and-data-retained",
+      "passed": true
+    },
+    {
+      "name": "no-forced-kills",
+      "passed": true,
+      "exits": [
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-wallet-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-mempool-metrics-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-adapter-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-stratum-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-kaspad-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-mempool-metrics-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-wallet-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-adapter-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-stratum-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-kaspad-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-mempool-metrics-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-wallet-api-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-adapter-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-stratum-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-kaspa-solo-kaspad-1",
+          "exitCode": "0"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-11-17T18:53:28Z",
+  "containers": [
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-ui-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-ui:ui-0.5.5@sha256:0f52ed6c47afbd40c08fbbda357724044c37e39dfeb1a70a1fc30c6bca37f2a5",
+      "state": "running",
+      "health": "starting",
+      "ports": {
+        "80/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "33067"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-adapter-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:0.5.4@sha256:859ce7db4a4435cbafa631e835d8bc445f16e14121aa9ebc4e5ce6d23463d6af",
+      "state": "running",
+      "health": "starting",
+      "ports": {
+        "5556/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "1900"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-wallet-api-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:wallet-0.5.4@sha256:2c40bfc9fdac5cbbf08d360ae10244033456ba2bac921930d6afb5bbb912a786",
+      "state": "running",
+      "health": "starting",
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-stratum-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:stratum-0.5.4@sha256:40969eb0a1369758551f389a715b5020b76979901600dcfcdb447e77d2f0b4d7",
+      "state": "running",
+      "health": null,
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-mempool-metrics-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:metrics-0.5.4@sha256:1a0efc2e5728a88568f1052283fce46e96adb8d32751f04c176201af1351dec1",
+      "state": "running",
+      "health": "starting",
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-init-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:wallet-0.5.4@sha256:2c40bfc9fdac5cbbf08d360ae10244033456ba2bac921930d6afb5bbb912a786",
+      "state": "exited",
+      "health": null,
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-kaspa-solo-kaspad-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-kaspa-solo-adapter:node-0.5.4@sha256:b286aea4732568e3aaa8c05a0fd25fb533b43cf1ed484edbc4765f805bba2adf",
+      "state": "running",
+      "health": null,
+      "ports": {
+        "16111/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "16111"
+          }
+        ]
+      }
+    }
+  ],
+  "passed": true,
+  "completedAt": "2026-11-17T18:54:09Z",
+  "recipeSha256": "34860e8ab41225285f511bc09dac0fafdd2163bcc0239418f583cc78eddf5980",
+  "authenticatedPortal": {
+    "pageStatus": 200,
+    "stateStatus": 200,
+    "nodePresent": true,
+    "demo": false,
+    "miningEnabled": false,
+    "hasPayout": false,
+    "assets": [
+      {
+        "path": "/apps/kraskus-kaspa-solo/foundation-v3.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-kaspa-solo/app.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-kaspa-solo/app.js",
+        "status": 200
+      }
+    ],
+    "passed": true
+  },
+  "scope": {
+    "update": "same-version recreate through the actual 5tratumOS update command",
+    "backupRestore": "Stopped disposable application data, restored before restart",
+    "legacyPreservation": "Synthetic recovery sentinel only; no real legacy wallet or funds",
+    "fullChainSync": false,
+    "physicalMiner": false,
+    "miningActivated": false,
+    "rewardSettlement": false
+  }
+}

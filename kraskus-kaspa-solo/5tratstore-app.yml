@@ -1,0 +1,28 @@
+id: kraskus-kaspa-solo
+name: Kaspa by Kraskus
+tagline: Kaspa node with local solo mining
+description: Run a Kaspa node and connect compatible miners on TCP 1900. Configure an external reward
+  destination. An internal settlement wallet forwards matured rewards after the fixed 1% developer
+  fee and transaction costs. Native-wallet controls are not exposed. Peer connections use TCP 16111.
+  Requires an x86-64 (amd64) host; ARM is not supported by this release. Initial chain synchronization
+  uses disk, memory and bandwidth. Kraskus Pool forwarding is not available in these submitted releases.
+  Existing wallet and recovery data must be backed up and preserved when switching from a native-wallet
+  version; this app does not expose native-wallet controls or automatically sweep funds.
+version: 0.5.5
+category: Mining
+developer: Kraskus Crypto / 4KM Ventures LLC
+website: https://kraskuscrypto.com/
+repo: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources
+support: https://kraskuscrypto.com/
+port: 33067
+path: /
+uiMode: proxy
+icon: icon.svg
+architectures:
+- amd64
+dependencies: []
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ui
+      APP_PORT: 80

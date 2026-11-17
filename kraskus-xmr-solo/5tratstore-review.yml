@@ -1,0 +1,44 @@
+schemaVersion: 1
+status: approved
+appId: kraskus-xmr-solo
+appVersion: 0.3.7
+reviewedAt: '2026-11-17'
+reviewedBy: Codex for WillItMod (owner-authorized catalogue publication)
+upstream:
+  sourceUrl: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources
+  license: Kraskus Crypto Proprietary Software Licence; bundled component licences
+  licenseEvidence: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources/blob/kraskus-licence-2026-10-14/LICENSE-KRASKUS.md
+delivery:
+  mode: direct-upstream-artifact
+  storePayload: recipe-only
+  mirrorsThirdPartyPayload: false
+rights:
+  packageOriginal: true
+  softwareDistributionCleared: true
+  containerUseCleared: true
+  listingTextCleared: true
+  artworkCleared: true
+  noticesIncluded: true
+compatibility:
+  osVersions:
+  - v0.8.53-dev
+  architectures:
+  - amd64
+  installTested: true
+  startTested: true
+  updateTested: true
+  uninstallTested: true
+security:
+  privileged: false
+  hostNetwork: false
+  dockerSocket: false
+  hostMountsReviewed: true
+  devicesReviewed: true
+  networkEndpointsReviewed: true
+notes: 'Independent GLOBAL listing and neutral artwork; original-publisher runtime contract adapted
+  under section 3 of its licence. Exact images were qualified with the real 5tratumOS CLI on amd64:
+  install, live dashboard/API, restart, same-version update, stopped-data backup and restore, and
+  keep-data uninstall. Authenticated portal HTML/API/assets passed separately; unauthenticated access
+  requires login. Mining remained disabled with no user payout configured. See REVIEW.md and qualification.json
+  for scope. No new full-chain sync, physical miner, reward settlement, historical-wallet migration
+  or ARM qualification is claimed.'

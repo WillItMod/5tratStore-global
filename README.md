@@ -31,11 +31,19 @@ add another app.
 - Eclipse Mosquitto™ 2.1.2 — loopback-only MQTT for miner and system telemetry.
 - Node-RED 5.0.4 — authenticated, loopback-only automation for miner telemetry, alerts, and control flows.
 - HashWatcher Remote Monitoring Setup 1.3.0 — developer-authorised, private guided access to supported ASIC miners through the user's own Tailscale network.
+- Bitcoin SV by Kraskus 0.6.4 — Bitcoin SV node and solo mining (amd64 only).
+- XBT by Kraskus 0.3.4 — XBT BLAKE2b node and solo mining (amd64 only).
+- CheetahCoin by Kraskus 0.6.3 — CheetahCoin node with two solo mining lanes (amd64 only).
+- Kaspa by Kraskus 0.5.5 — Kaspa node with local solo mining (amd64 only).
+- Pearl by Kraskus 0.6.5 — Pearl node and external-address solo mining (amd64 only).
+- Monero by Kraskus 0.3.7 — Monero node and RandomX solo mining (amd64 only).
+- Zcash by Kraskus 0.6.4 — Zcash node and Equihash solo mining (amd64 only).
 
-Each recipe passed install, start, update, and uninstall testing on a supported
-5tratumOS `v0.7.3` build or `v0.7.4` release candidate on amd64. Approval
-evidence lives beside each recipe and the validator rejects any unapproved
-directory.
+Version-specific operating system and architecture qualification is recorded beside
+each recipe. The Kraskus additions passed lifecycle testing on 5tratumOS
+`v0.8.53-dev` on amd64 and retain the publisher's fixed 1% developer allocation.
+See [the admission record](KRASKUS-ADMISSION-20261117.md) for overlap decisions
+and qualification limits. The validator rejects any unapproved directory.
 
 ## Catalogue contract
 

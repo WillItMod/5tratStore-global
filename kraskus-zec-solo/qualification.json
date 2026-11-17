@@ -1,0 +1,399 @@
+{
+  "app": "kraskus-zec-solo",
+  "version": "0.6.4",
+  "os": "v0.8.53-dev",
+  "architecture": "amd64",
+  "steps": [
+    {
+      "name": "install",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "start",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 15.56
+    },
+    {
+      "name": "browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "security_mode",
+            "demo",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "round_target_difficulty",
+            "network_difficulty",
+            "blocks",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "portal-auth-required",
+      "passed": true,
+      "http": 302
+    },
+    {
+      "name": "stop",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 7.78
+    },
+    {
+      "name": "backup",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.0
+    },
+    {
+      "name": "restart",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.82
+    },
+    {
+      "name": "restart-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "security_mode",
+            "demo",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "round_target_difficulty",
+            "network_difficulty",
+            "blocks",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "same-version-update",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.93
+    },
+    {
+      "name": "update-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "security_mode",
+            "demo",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "round_target_difficulty",
+            "network_difficulty",
+            "blocks",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "state-preserved-after-update",
+      "passed": true
+    },
+    {
+      "name": "stop-before-restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 4.98
+    },
+    {
+      "name": "restore",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.0
+    },
+    {
+      "name": "start-restored",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.62
+    },
+    {
+      "name": "restored-browser-ready",
+      "passed": true,
+      "http": 200,
+      "apiProbes": {
+        "/api/state": {
+          "status": 200,
+          "jsonType": "dict",
+          "keys": [
+            "app_version",
+            "coin",
+            "network",
+            "security_mode",
+            "demo",
+            "node",
+            "node_freshness",
+            "node_startup",
+            "activation_available",
+            "mining_enabled",
+            "mining_ready",
+            "message",
+            "payout_address",
+            "developer_fee",
+            "workers",
+            "hidden_workers",
+            "worker_history_available",
+            "hashrate_hs",
+            "hashrate_series",
+            "difficulty_settings",
+            "best_shares",
+            "round_target_difficulty",
+            "network_difficulty",
+            "blocks",
+            "pruning",
+            "stratum_port",
+            "uptime_seconds"
+          ],
+          "demo": false,
+          "miningEnabled": false,
+          "securityMode": "platform",
+          "hasPayout": false
+        }
+      }
+    },
+    {
+      "name": "restored-state-preserved",
+      "passed": true
+    },
+    {
+      "name": "uninstall-keep-data",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 5.83
+    },
+    {
+      "name": "uninstalled-and-data-retained",
+      "passed": true
+    },
+    {
+      "name": "no-forced-kills",
+      "passed": true,
+      "exits": [
+        {
+          "container": "5tratumos-kraskus-zec-solo-zallet-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-kraskus-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zebra-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zallet-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zallet-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-kraskus-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zebra-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zallet-init-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-ui-1",
+          "exitCode": "0"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-kraskus-1",
+          "exitCode": "143"
+        },
+        {
+          "container": "5tratumos-kraskus-zec-solo-zebra-1",
+          "exitCode": "0"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2026-11-17T18:52:38Z",
+  "containers": [
+    {
+      "name": "/5tratumos-kraskus-zec-solo-ui-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-zec-solo-wallet-controller:ui-0.6.2@sha256:b2a490afdd1ae4808c1bed704a9e76761a1f282246986f4233ac85556cc3535a",
+      "state": "running",
+      "health": "starting",
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "33062"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-zec-solo-kraskus-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-zec-solo-wallet-controller:0.6.4@sha256:c4feeac65b00521ff4c59b4e7e77f6addf73f073b70b1d2b50b07a1eb621392d",
+      "state": "running",
+      "health": "starting",
+      "ports": {
+        "3335/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "3335"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/5tratumos-kraskus-zec-solo-zallet-init-1",
+      "image": "ghcr.io/kraskuscrypto/kraskus-zec-solo-wallet-controller:0.5.2@sha256:51c9eda6c7b601e200593f6a7b1cfab70f5fc31838508db88737f83038d1f157",
+      "state": "exited",
+      "health": "unhealthy",
+      "ports": {}
+    },
+    {
+      "name": "/5tratumos-kraskus-zec-solo-zebra-1",
+      "image": "zfnd/zebra:7.0.0@sha256:a70d2be8ffef3a4b6e37355724e36a0e6c1838e46baa28bfb216739f00cf2d34",
+      "state": "running",
+      "health": null,
+      "ports": {}
+    }
+  ],
+  "passed": true,
+  "completedAt": "2026-11-17T18:53:27Z",
+  "recipeSha256": "8afb07289de29d8963284e316caffc8ec27586ac2634d0fb4c1d3e0bd6a484db",
+  "authenticatedPortal": {
+    "pageStatus": 200,
+    "stateStatus": 200,
+    "nodePresent": true,
+    "demo": false,
+    "miningEnabled": false,
+    "hasPayout": false,
+    "assets": [
+      {
+        "path": "/apps/kraskus-zec-solo/foundation-v3.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-zec-solo/app.css",
+        "status": 200
+      },
+      {
+        "path": "/apps/kraskus-zec-solo/app.js",
+        "status": 200
+      }
+    ],
+    "passed": true
+  },
+  "scope": {
+    "update": "same-version recreate through the actual 5tratumOS update command",
+    "backupRestore": "Stopped disposable application data, restored before restart",
+    "legacyPreservation": "Synthetic recovery sentinel only; no real legacy wallet or funds",
+    "fullChainSync": false,
+    "physicalMiner": false,
+    "miningActivated": false,
+    "rewardSettlement": false
+  }
+}

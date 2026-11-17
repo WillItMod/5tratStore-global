@@ -1,0 +1,28 @@
+id: kraskus-prl-solo
+name: Pearl by Kraskus
+tagline: Pearl node and external-address solo mining
+description: Run a Pearl 1.5.5 node with a browser dashboard and local mining endpoint on TCP 1902.
+  Configure your external reward address before starting mining. A fixed 1% developer fee applies.
+  Peer connections use TCP 44108. Physical GPU miner qualification was waived by the upstream publisher.
+  Requires an x86-64 (amd64) host; ARM is not supported by this release. Initial chain synchronization
+  uses disk, memory and bandwidth. Kraskus Pool forwarding is not available in these submitted releases.
+  Existing wallet and recovery data must be backed up and preserved when switching from a native-wallet
+  version; this app does not expose native-wallet controls or automatically sweep funds.
+version: 0.6.5
+category: Mining
+developer: Kraskus Crypto / 4KM Ventures LLC
+website: https://kraskuscrypto.com/
+repo: https://github.com/kraskuscrypto/Kraskus-Crypto-Release-Sources
+support: https://kraskuscrypto.com/
+port: 33068
+path: /
+uiMode: proxy
+icon: icon.svg
+architectures:
+- amd64
+dependencies: []
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ui
+      APP_PORT: 8080
